@@ -5,9 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Made In China">
     <title>Music Base</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/globals.css">
 </head>
     <body>
+        <header>
+            <h1>Music Base</h1>
+        </header>
+        
+        <main>
+            <!------------Filter Artists by Labels------------>
+            <select name="filter-labels" id="filter-labels">
+                <option value="XL Recordings"></option>
+            </select>
+
+            <!------------Filter Artists by genres------------>
+            <select name="filter-genres" id="filter-genres">
+                <option value="rap">Rap</option>
+                <option value="rock">Rock</option>
+            </select>
+
+            <!------------Sort Artists by different options------------>
+            <select name="sort-artists" id="sort-artists">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+                <option value="birthdate">Birthdate</option>
+            </select>
+
+            <!------------Artists Table------------>
+            <article>
+                <table id="artists-table"></table>
+            </article>
+        </main>
     
         <script src="javascript/main.js" type="module"></script>
     </body>
