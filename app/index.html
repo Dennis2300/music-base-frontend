@@ -15,17 +15,20 @@
         <main>
             <!------------Filter Artists by Labels------------>
             <select name="filter-labels" id="filter-labels">
-                <option value="XL Recordings"></option>
+                <option value="none">None</option>
+                <option value="XL Recordings">XL Recordings</option>
             </select>
 
             <!------------Filter Artists by genres------------>
             <select name="filter-genres" id="filter-genres">
+                <option value="none">None</option>
                 <option value="rap">Rap</option>
                 <option value="rock">Rock</option>
             </select>
 
             <!------------Sort Artists by different options------------>
             <select name="sort-artists" id="sort-artists">
+                <option value="none">None</option>
                 <option value="asc">Ascending</option>
                 <option value="desc">Descending</option>
                 <option value="birthdate">Birthdate</option>
@@ -35,8 +38,64 @@
             <article>
                 <table id="artists-table"></table>
             </article>
+
+            <!------------Create Artist Form------------>
+            <form id="create-artist-form">
+                <label for="name">Artist Name</label>
+                <input type="text" name="name">
+
+                <label for="birthdate">Birthdate</label>
+                <input type="date" name="birthdate">
+                
+                <label for="activeSince">Active Since</label>
+                <input type="number" name="activeSince" min="1980" max="2099" step="1">               
+                
+                <label for="image">Image of Artist</label>
+                <input type="url" name="image" placeholder="url">
+
+                <label for="shortDesc">Short Description</label>
+                <input type="text" name="shortDesc">
+                <button>Submit</button>
+            </form>
+
+            <!------------Create Album Form------------>
+                <form id="create-album-form">
+                    <select>
+                        <option value="Drake">Drake</option>
+                        <option value="KendrickLamar">Kendrick Lamar</option>
+                    </select>
+                    <label for="albumTitle">Album Title</label>
+                    <input type="text" name="albumTitle">
+                    
+                    <label for="releaseDate">Album Release Date</label>
+                    <input type="date" name="releaseDate">
+                    <button>Submit</button>
+                </form>
+
+            <!------------Create Songs belonging to an Album------------>
+                <form id="create-songs-form">
+                    <select>
+                        <option value="XL Recordings">Album 1</option>
+                        <option value="XL Recordings">Album 2</option>
+                        <option value="XL Recordings">Album 3</option>
+                    </select>
+                    <div id="song-title-container">
+                        <input type="text" name="songTitle" placeholder="Song Title 1">
+                    </div>
+
+                    <div id="song-duration-container">
+                        <label for="songDuration">Song Legnth</label>
+                        <input type="number" name="songDuration" min="0" max="600" step="1" placeholder="Song Duration in Seconds">
+                    </div>
+
+                    <div id="song-releasedate-container">
+                        <label for="releaseDate">Song Release Date</label>
+                        <input type="date" name="releaseDate">
+                    </div>
+                    <button id="add-song-btn" type="button">Add More Songs</button>
+                </form>
+
         </main>
-    
         <script src="javascript/main.js" type="module"></script>
     </body>
 </html>
