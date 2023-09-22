@@ -1,42 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Made In China">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Made In China" />
     <title>Music Base</title>
-    <link rel="stylesheet" href="css/globals.css">
-</head>
-    <body>
-        <header>
-            <h1>Music Base</h1>
-        </header>
-        
-        <main>
-            <!------------Filter Artists by Labels------------>
-            <select name="filter-labels" id="filter-labels">
-                <option value="XL Recordings"></option>
-            </select>
+    <link rel="stylesheet" href="css/globals.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Music Base</h1>
 
-            <!------------Filter Artists by genres------------>
-            <select name="filter-genres" id="filter-genres">
-                <option value="rap">Rap</option>
-                <option value="rock">Rock</option>
-            </select>
+      <nav>
+        <button id="home">Home</button>
+        <button id="show-artists">Artists</button>
+        <button id="show-albums">Albums</button>
+        <button id="show-songs">Songs</button>
+      </nav>
 
-            <!------------Sort Artists by different options------------>
-            <select name="sort-artists" id="sort-artists">
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
-                <option value="birthdate">Birthdate</option>
-            </select>
+      <!-- site buttons -->
+      <div>
+        <button id="add-artist">Add Artist</button>
+        <button id="add-album">Add Album</button>
+        <button id="add-song">Add Song</button>
+      </div>
+    </header>
 
-            <!------------Artists Table------------>
-            <article>
-                <table id="artists-table"></table>
-            </article>
-        </main>
-    
-        <script src="javascript/main.js" type="module"></script>
-    </body>
+    <main>
+      <!------------Filter Artists by Labels------------>
+      <select name="filter-labels" id="filter-labels">
+        <option value="all">All</option>
+      </select>
+
+      <!------------Filter Artists by genres------------>
+      <select name="filter-genres" id="filter-genres">
+        <option value="all">All</option>
+      </select>
+
+      <!------------Sort Artists by different options------------>
+      <select name="sort" id="sort">
+        <option value="all">All</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+
+      <!-- {
+        "name": "Michael Jackson",
+        "birthdate": "1958-08-29",
+        "activeSince": 1964,
+        "website": "https://www.michaeljackson.com/",
+        "image": "https://www.michaeljackson.com/image.jpg",
+        "shortDescription": "King of Pop and one of the most iconic musicians of all time.",
+        "favorite": null,
+        "genres": ["Pop", "R&B"],
+        "labels": ["Epic Records", "Motown"]
+      }, -->
+
+      <!------------Artists Table------------>
+      <h2>Artists</h2>
+      <article>
+        <table id="artists-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Artist</th>
+              <th>Birthday</th>
+              <th>Active Since</th>
+              <th>Website</th>
+              <th>Favorite</th>
+              <th>Labels</th>
+              <th>Genres</th>
+              <th>Albums</th>
+              <th>Songs</th>
+            </tr>
+          </thead>
+          <tbody id="artist-table-body">
+            <tr>
+              <td>https://www.kendricklamar.com/image.jpg</td>
+              <td>Kendrick Lamar</td>
+              <td>1987-06-17</td>
+              <td>2003</td>
+              <td>https://www.kendricklamar.com/</td>
+              <td>Yes</td>
+              <td>
+                <ul>
+                  <li>Top Dawg Entertainment</li>
+                  <li>Aftermath Entertainment</li>
+                  <li>Interscope Records</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Hip Hop</li>
+                  <li>Jazz Rap</li>
+                  <li>West Coast Hip Hop</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Section.80</li>
+                  <li>Good Kid, M.A.A.D City</li>
+                  <li>To Pimp a Butterfly</li>
+                  <li>Damn</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Alright</li>
+                  <li>King Kunta</li>
+                  <li>Swimming Pools</li>
+                  <li>Money Trees</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-------------- Album Table ----------->
+      <h2>Albums</h2>
+      <article>
+        <table id="albums-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Release date</th>
+              <th>Artists</th>
+              <th>Genres</th>
+              <th>Labels</th>
+              <th>Songs</th>
+            </tr>
+          </thead>
+          <tbody id="album-table-body">
+            <tr>
+              <td>Kendrick Lamar Album</td>
+              <td>2012-10-22</td>
+              <td>
+                <ul>
+                  <li>Kendrick Lamar</li>
+                  <li>Dr. Dre</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Hip Hop</li>
+                  <li>Jazz Rap</li>
+                  <li>West Coast Hip Hop</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Top Dawg Entertainment</li>
+                  <li>Aftermath Entertainment</li>
+                  <li>Interscope Records</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Alright</li>
+                  <li>King Kunta</li>
+                  <li>Swimming Pools</li>
+                  <li>Money Trees</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-------------- Song Table ----------->
+      <h2>Songs</h2>
+      <article>
+        <table id="songs-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Release date</th>
+            <th>Bonus track</th>
+            <th>Artists</th>
+            <th>Albums</th>
+            <th>Genres</th>
+            <th>Labels</th>
+          </tr>
+        </thead>
+        <tbody id="song-table-body">
+          <tr>
+            <td>Alright</td>
+            <td>3:39</td>
+            <td>2015-06-30</td>
+            <td>No</td>
+            <td>
+              <ul>
+                <li>Kendrick Lamar</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>To Pimp a Butterfly</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Hip Hop</li>
+                <li>Jazz Rap</li>
+                <li>West Coast Hip Hop</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Top Dawg Entertainment</li>
+                <li>Aftermath Entertainment</li>
+                <li>Interscope Records</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+      </article>
+    </main>
+
+    <script src="javascript/main.js" type="module"></script>
+  </body>
 </html>
