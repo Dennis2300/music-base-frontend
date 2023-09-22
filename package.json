@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "![Project Logo](insert-your-frontend-logo-url-here)",
   "main": "index.html",
+  "type": "module",
   "scripts": {
     "start": "npx live-server",
     "dev": "npx live-server"
