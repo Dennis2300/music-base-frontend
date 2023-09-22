@@ -1,0 +1,19 @@
+{
+  "name": "music-base-frontend",
+  "version": "1.0.0",
+  "description": "![Project Logo](insert-your-frontend-logo-url-here)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server",
+    "dev": "npx live-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.3"
+  }
+}
