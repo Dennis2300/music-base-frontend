@@ -18,43 +18,35 @@ export function songsTable() {
 }
 
 export function songTableRow(song) {
-    console.log(song);
   const tableRow = /*html*/ `
         <tr id="song_${song.id}">
             <td>${song.title}</td>
             <td>${song.releaseDate}</td>
             <td>
                 <ul>
-                    ${song.artist
+                    ${song.artists
                     .map(artist => `<li>${artist}</li>`)
                     .join('')}
                 </ul>
             </td>
             <td>
                 <ul>
-                    ${song.album
+                    ${song.albums
                     .map(album => `<li>${album}</li>`)
                     .join('')}
                 </ul>
             </td>
             <td>
                 <ul>
-                    ${song.genre
+                    ${song.genres
                     .map(genre => `<li>${genre}</li>`)
                     .join('')}
                 </ul>
             </td>
             <td>
                 <ul>
-                    ${song.label
+                    ${song.labels
                     .map(label => `<li>${label}</li>`)
-                    .join('')}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    ${song.bonus_track
-                    .map(bonus_track => `<li>${bonus_track}</li>`)
                     .join('')}
                 </ul>
             </td>

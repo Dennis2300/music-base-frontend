@@ -26,6 +26,7 @@ export async function songPage(event) {
     // add table data
     try {
         const songs = await getAllSongs();
+        console.log(songs);
         songs.forEach(song => showSong(song));
     } catch (error) {
         console.log(error);
