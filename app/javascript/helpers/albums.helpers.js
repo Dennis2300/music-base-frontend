@@ -1,4 +1,4 @@
-import { albumForm } from '../components/forms/albums/Form.js';
+import { albumForm } from '../components/forms/album.form.js';
 import { headerAlbums } from '../components/globals/headers.js';
 import { 
   albumTable, 

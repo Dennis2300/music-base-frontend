@@ -5,6 +5,7 @@ import {
   insertFilterOptions_Genres,
   insertFilterOptions_Labels,
 } from './helpers/little.helpers.js';
+import { songPage } from './helpers/songs.helpers.js';
 
 window.addEventListener('load', initApp);
 
@@ -21,4 +22,8 @@ function initApp() {
    document
     .querySelector('#show-albums-btn')
     .addEventListener('click', albumPage);
+
+  document
+    .querySelector('#show-songs-btn')
+    .addEventListener('click', songPage);
 }
