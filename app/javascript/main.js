@@ -1,3 +1,5 @@
+
+import { albumPage } from './helpers/albums.helpers.js';
 import { artistsPage } from './helpers/artists.helpers.js';
 import {
   insertFilterOptions_Genres,
@@ -15,4 +17,8 @@ function initApp() {
   document
     .querySelector('#show-artists-btn')
     .addEventListener('click', artistsPage);
+
+   document
+    .querySelector('#show-albums-btn')
+    .addEventListener('click', albumPage);
 }
