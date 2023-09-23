@@ -1,0 +1,68 @@
+export function artistTable() {
+  const artistTable = /*html*/ `
+  <table>
+    <thead>
+        <tr>
+        <th>Artist</th>
+        <th>Birthday</th>
+        <th>Active Since</th>
+        <th>Website</th>
+        <th>Favorite</th>
+        <th>Labels</th>
+        <th>Genres</th>
+        <th>Albums</th>
+        <th>Songs</th>
+        </tr>
+    </thead>
+    <tbody id="artistsTable-container"></tbody>
+    </table>
+    `;
+  return artistTable;
+}
+
+export function artistTableRow(artist) {
+  const tableRow = /*html*/ `
+            <tr id="artist_${artist.id}">
+                <td>${artist.name}</td>
+                <td>${artist.birthdate}</td>
+                <td>${artist.activeSince}</td>
+                <td>${artist.website}</td>
+                <td>${artist.favorite}</td>
+                <td>
+                    <ul>
+                        ${artist.labels
+                          .map(label => `<li>${label}</li>`)
+                          .join('')}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        ${artist.genres
+                          .map(genre => `<li>${genre}</li>`)
+                          .join('')}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        ${artist.albums
+                          .map(album => `<li>${album}</li>`)
+                          .join('')}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        ${artist.songs.map(song => `<li>${song}</li>`).join('')}
+                    </ul>
+                </td>
+                <td>
+                    <button class="table__button" id="editArtist_${
+                      artist.id
+                    }">Edit</button>
+                    <button class="table__button" id="deleteArtist_${
+                      artist.id
+                    }">Delete</button>
+                </td>
+            </tr>
+            `;
+  return tableRow;
+}

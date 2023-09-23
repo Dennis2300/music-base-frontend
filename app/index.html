@@ -12,18 +12,11 @@
       <h1>Music Base</h1>
 
       <nav>
-        <button id="home">Home</button>
-        <button id="show-artists">Artists</button>
-        <button id="show-albums">Albums</button>
-        <button id="show-songs">Songs</button>
+        <button id="home-btn">Home</button>
+        <button id="show-artists-btn">Artists</button>
+        <button id="show-albums-btn">Albums</button>
+        <button id="show-songs-btn">Songs</button>
       </nav>
-
-      <!-- site buttons -->
-      <div>
-        <button id="add-artist">Add Artist</button>
-        <button id="add-album">Add Album</button>
-        <button id="add-song">Add Song</button>
-      </div>
     </header>
 
     <main>
@@ -44,78 +37,9 @@
         <option value="desc">Descending</option>
       </select>
 
-      <!-- {
-        "name": "Michael Jackson",
-        "birthdate": "1958-08-29",
-        "activeSince": 1964,
-        "website": "https://www.michaeljackson.com/",
-        "image": "https://www.michaeljackson.com/image.jpg",
-        "shortDescription": "King of Pop and one of the most iconic musicians of all time.",
-        "favorite": null,
-        "genres": ["Pop", "R&B"],
-        "labels": ["Epic Records", "Motown"]
-      }, -->
+      <!-- Home Page -->
 
-      <!------------Artists Table------------>
-      <h2>Artists</h2>
-      <article>
-        <table id="artists-table">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Artist</th>
-              <th>Birthday</th>
-              <th>Active Since</th>
-              <th>Website</th>
-              <th>Favorite</th>
-              <th>Labels</th>
-              <th>Genres</th>
-              <th>Albums</th>
-              <th>Songs</th>
-            </tr>
-          </thead>
-          <tbody id="artist-table-body">
-            <tr>
-              <td>https://www.kendricklamar.com/image.jpg</td>
-              <td>Kendrick Lamar</td>
-              <td>1987-06-17</td>
-              <td>2003</td>
-              <td>https://www.kendricklamar.com/</td>
-              <td>Yes</td>
-              <td>
-                <ul>
-                  <li>Top Dawg Entertainment</li>
-                  <li>Aftermath Entertainment</li>
-                  <li>Interscope Records</li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li>Hip Hop</li>
-                  <li>Jazz Rap</li>
-                  <li>West Coast Hip Hop</li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li>Section.80</li>
-                  <li>Good Kid, M.A.A.D City</li>
-                  <li>To Pimp a Butterfly</li>
-                  <li>Damn</li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li>Alright</li>
-                  <li>King Kunta</li>
-                  <li>Swimming Pools</li>
-                  <li>Money Trees</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
+      <section id="page"></section>
 
       <!-------------- Album Table ----------->
       <h2>Albums</h2>
@@ -162,6 +86,10 @@
                   <li>Swimming Pools</li>
                   <li>Money Trees</li>
                 </ul>
+              </td>
+              <td>
+                <button id="edit-artist">Edit</button>
+                <button id="delete-artist">Delete</button>
               </td>
             </tr>
           </tbody>
@@ -214,12 +142,17 @@
                 <li>Interscope Records</li>
               </ul>
             </td>
+            <td>
+              <button id="edit-artist">Edit</button>
+              <button id="delete-artist">Delete</button>
+            </td>
           </tr>
         </tbody>
         </table>
       </article>
+      <dialog id="dialog-form-container" class="dialog-form-container"></dialog>
     </main>
 
-    <script src="javascript/main.js" type="module"></script>
+    <script src="./javascript/main.js" type="module"></script>
   </body>
 </html>
