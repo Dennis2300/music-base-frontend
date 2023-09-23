@@ -55,12 +55,15 @@ export function artistTableRow(artist) {
                     </ul>
                 </td>
                 <td>
-                    <button class="table__button" id="editArtist_${
+                    <button class="table_button" id="${
                       artist.id
                     }">Edit</button>
-                    <button class="table__button" id="deleteArtist_${
+                    <button class="table_button" id="${
                       artist.id
                     }">Delete</button>
+                    <button class="table_button" id="${
+                      artist.id
+                    }">Favorite</button>
                 </td>
             </tr>
             `;

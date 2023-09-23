@@ -1,13 +1,14 @@
-// import { insertSelectOptionsGenres, insertSelectOptionsLabels } from './modules/insertSelectOptionsGenres.js';
-import { artistsPage } from './helpers/page.helpers.js';
+
+import { artistsPage } from './helpers/artists.helpers.js';
+import { insertFilterOptions_Genres, insertFilterOptions_Labels } from './helpers/little.helpers.js';
 
 window.addEventListener('load', initApp);
 
 function initApp() {
   console.log('App initialized');
 
-  // insertSelectOptionsGenres();
-  // insertSelectOptionsLabels();
+  insertFilterOptions_Genres();
+  insertFilterOptions_Labels();
 
   document
     .querySelector('#show-artists-btn')
