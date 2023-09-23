@@ -10,7 +10,6 @@ export async function getAllArtists() {
   }
 }
 
-
 // set favorite artists
 export async function favoriteArtist(artist) {
   // if artist is favorite, set favorite to false

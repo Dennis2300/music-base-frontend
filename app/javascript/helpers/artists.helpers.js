@@ -1,4 +1,4 @@
-import { artistForm } from '../components/forms/artists/createForm.js';
+import { artistForm } from '../components/forms/artist.form.js';
 import { headerArtists } from '../components/globals/headers.js';
 import {
   artistTable,
@@ -44,17 +44,17 @@ function showArtist(artist) {
   document
     .querySelector('#artistsTable-container')
     .insertAdjacentHTML('afterbegin', artistTableRow(artist));
-//   document
-//     .querySelector(
-//       '#artistsTable-container tbody:first-child .btn-delete-artist'
-//     )
-//     .addEventListener('click', () => deleteArtist(artist.id));
+  //   document
+  //     .querySelector(
+  //       '#artistsTable-container tbody:first-child .btn-delete-artist'
+  //     )
+  //     .addEventListener('click', () => deleteArtist(artist.id));
   document
-    .querySelector(
-      `#editArtist_${artist.id}`).addEventListener('click', () => selectArtist(artist));
-//   document
-//     .querySelector('#artistsTable-container tbody:first-child .favorite_btn')
-//     .addEventListener('click', () => favoriteArtist(artist));
+    .querySelector(`#editArtist_${artist.id}`)
+    .addEventListener('click', () => selectArtist(artist));
+  //   document
+  //     .querySelector('#artistsTable-container tbody:first-child .favorite_btn')
+  //     .addEventListener('click', () => favoriteArtist(artist));
 }
 // Purpose: Select artist to update
 export function selectArtist(artist) {
@@ -121,4 +121,3 @@ export function openArtistForm(formType) {
 
   document.querySelector('#dialog').showModal();
 }
-

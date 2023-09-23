@@ -1,7 +1,5 @@
-
-
-export function headerArtists(){
-    const headerArtists = /*html*/`
+export function headerArtists() {
+  const headerArtists = /*html*/ `
         <div class="header">
             <h1>Artists</h1>
             <div class="header_buttons">
@@ -9,11 +7,11 @@ export function headerArtists(){
             </div>
         </div>
     `;
-    return headerArtists;
+  return headerArtists;
 }
 
-export function headerAlbums(){
-    const headerAlbums = /*html*/`
+export function headerAlbums() {
+  const headerAlbums = /*html*/ `
         <div class="header">
             <h1>Albums</h1>
             <div class="header_buttons">
@@ -21,11 +19,11 @@ export function headerAlbums(){
             </div>
         </div>
     `;
-    return headerAlbums;
+  return headerAlbums;
 }
 
-export function headerSongs(){
-    const headerSongs = /*html*/`
+export function headerSongs() {
+  const headerSongs = /*html*/ `
         <div class="header">
             <h1>Songs</h1>
             <div class="header_buttons">
@@ -33,5 +31,5 @@ export function headerSongs(){
             </div>
         </div>
     `;
-    return headerSongs;
+  return headerSongs;
 }
