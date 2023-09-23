@@ -50,6 +50,13 @@ export function albumTableRow(album) {
                               .join('')}
                             </ul>
                     </td>
+                    <td>
+                        <button class="table_button" id="editAlbum_${
+                          album.id
+                        }">Edit</button>
+                        <button class="table_button" id="deleteAlbum_${
+                          album.id
+                        }">Delete</button>
                 </tr>
     `;
     return tableRow;
