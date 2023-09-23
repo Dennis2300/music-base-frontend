@@ -1,10 +1,15 @@
-import { insertSelectOptionsGenres, insertSelectOptionsLabels } from './modules/insertSelectOptionsGenres.js';
+// import { insertSelectOptionsGenres, insertSelectOptionsLabels } from './modules/insertSelectOptionsGenres.js';
+import { artistsPage } from './helpers/page.helpers.js';
 
 window.addEventListener('load', initApp);
 
 function initApp() {
-   console.log('App initialized');
+  console.log('App initialized');
 
-   insertSelectOptionsGenres();
-   insertSelectOptionsLabels();
+  // insertSelectOptionsGenres();
+  // insertSelectOptionsLabels();
+
+  document
+    .querySelector('#show-artists-btn')
+    .addEventListener('click', artistsPage);
 }

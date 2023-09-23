@@ -141,3 +141,55 @@ select {
 #songs-table tr:hover {
   background-color: #c2e4d9; /* Light green on hover */
 }
+
+/* Form container styling */
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+#createformArtist {
+  background-color: #fff;
+  padding: 50px;
+  border: 5px solid #181818; 
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%; 
+  max-width: 600px; 
+}
+
+/* Rest of your styling remains the same */
+
+input[type="submit"],
+input[type="reset"],
+button[type="button"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]{
+  background-color: #007bff;
+  color: #fff;
+}
+
+input[type="reset"]{
+  background-color: #ff5722;
+  color: #fff;
+}
+
+button[type="button"]{
+  background-color: #555;
+  color: #fff;
+}
