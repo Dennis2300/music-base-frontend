@@ -1,7 +1,15 @@
-export function createformArtist(){
-    const createformArtist = /*html*/`
-        <form id="createformArtist" class="createforms">
-            <h2>Add Music Artist</h2>
+export function artistForm(type) {
+  const update = 'Update Artist';
+  const create = 'Create Artist';
+  const titel = '';
+  if (type === 'update') {
+    titel = update;
+  } else if (type === 'create') {
+    titel = create;
+  }
+  const artistForm = /*html*/ `
+        <form id="artist-form" class="form-artist">
+        h2 class="artist-form-title">${titel}</h2>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -30,6 +38,16 @@ export function createformArtist(){
             
             <br><br>
 
+            <label for="albums">Albums:</label>
+            <select id="albums" name="albums"></select>
+
+            <br><br>
+
+            <label for="songs">Songs:</label>
+            <select id="songs" name="songs"></select>
+
+            <br><br>
+
             <div>
                 <p><strong>Selected Genres:</strong></p>
                 <div id="selectedGenres"></div>
@@ -40,10 +58,23 @@ export function createformArtist(){
                 <div id="selectedLabels"></div>
             </div>
 
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-            <button type="button">Cancel</button>
+            <div>
+                <p><strong>Selected Albums:</strong></p>
+                <div id="selectedAlbums"></div>
+            </div>
+
+            <div>
+                <p><strong>Selected Songs:</strong></p>
+                <div id="selectedSongs"></div>
+
+            </div>
+
+            <br><br>
+            
+            <input id="submit-btn" type="submit" value="Submit">
+            <input id="reset-btn" type="reset" value="Reset">
+            <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;
-    return createformArtist;
+  return artistForm;
 }

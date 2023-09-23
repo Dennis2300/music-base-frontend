@@ -5,7 +5,7 @@ export function headerArtists(){
         <div class="header">
             <h1>Artists</h1>
             <div class="header_buttons">
-                <button class="header__button" id="createArtist">Create Artist</button>
+                <button class="header_button" id="create-artist-header-btn">Create Artist</button>
             </div>
         </div>
     `;
@@ -17,7 +17,7 @@ export function headerAlbums(){
         <div class="header">
             <h1>Albums</h1>
             <div class="header_buttons">
-                <button class="header__button" id="createAlbum">Create Album</button>
+                <button class="header_button" id="create-album-header-btn">Create Album</button>
             </div>
         </div>
     `;
@@ -29,7 +29,7 @@ export function headerSongs(){
         <div class="header">
             <h1>Songs</h1>
             <div class="header_buttons">
-                <button class="header__button" id="createSong">Create Song</button>
+                <button class="header_button" id="create-song-header-btn">Create Song</button>
             </div>
         </div>
     `;
