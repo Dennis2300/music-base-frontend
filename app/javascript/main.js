@@ -1,5 +1,6 @@
 
-import { albumPage, artistsPage } from './helpers/artists.helpers.js';
+import { albumPage } from './helpers/albums.helpers.js';
+import { artistsPage } from './helpers/artists.helpers.js';
 import { insertFilterOptions_Genres, insertFilterOptions_Labels } from './helpers/little.helpers.js';
 
 window.addEventListener('load', initApp);

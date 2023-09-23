@@ -9,7 +9,7 @@ export function artistForm(type) {
   }
   const artistForm = /*html*/ `
         <form id="artist-form" class="form-artist">
-        h2 class="artist-form-title">${titel}</h2>
+        <h2 class="artist-form-title">${titel}</h2>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
 

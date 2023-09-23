@@ -1,5 +1,4 @@
 
-
 export function headerArtists(){
     const headerArtists = /*html*/`
         <div class="header">
