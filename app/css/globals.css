@@ -1,0 +1,195 @@
+body {
+  background-color: #f8f7f7;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+  font: 1em sans-serif;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Navigation buttons */
+nav button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Site buttons */
+div button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+/* the pulldowns */
+select {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+/* Artists Table Style */
+#artists-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f0f0f0; /* Light gray background */
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+#artists-table th,
+#artists-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+#artists-table th {
+  background-color: #007bff; /* Blue header background */
+  color: #fff;
+  font-weight: bold;
+}
+
+#artists-table tr:nth-child(even) {
+  background-color: #e0e0e0; /* Slightly darker gray for even rows */
+}
+
+#artists-table tr:hover {
+  background-color: #ddd; /* Light gray on hover */
+}
+
+/* Albums Table Style */
+#albums-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* White background */
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+#albums-table th,
+#albums-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+#albums-table th {
+  background-color: #ff5722; /* Orange header background */
+  color: #fff;
+  font-weight: bold;
+}
+
+#albums-table tr:nth-child(even) {
+  background-color: #f5f5f5; /* Light gray for even rows */
+}
+
+#albums-table tr:hover {
+  background-color: #ddd; /* Light gray on hover */
+}
+
+/* Songs Table Style */
+#songs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e6f7ff; /* Light blue background */
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+#songs-table th,
+#songs-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+#songs-table th {
+  background-color: #4caf50; /* Green header background */
+  color: #fff;
+  font-weight: bold;
+}
+
+#songs-table tr:nth-child(even) {
+  background-color: #d9f4e3; /* Light green for even rows */
+}
+
+#songs-table tr:hover {
+  background-color: #c2e4d9; /* Light green on hover */
+}
+
+/* Form container styling */
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+#createformArtist {
+  background-color: #fff;
+  padding: 50px;
+  border: 5px solid #181818; 
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%; 
+  max-width: 600px; 
+}
+
+/* Rest of your styling remains the same */
+
+input[type="submit"],
+input[type="reset"],
+button[type="button"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]{
+  background-color: #007bff;
+  color: #fff;
+}
+
+input[type="reset"]{
+  background-color: #ff5722;
+  color: #fff;
+}
+
+button[type="button"]{
+  background-color: #555;
+  color: #fff;
+}
