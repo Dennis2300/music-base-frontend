@@ -1,3 +1,1 @@
-export default class sort {
-    
-}
+export default class sort {}

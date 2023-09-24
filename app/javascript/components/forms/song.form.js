@@ -1,13 +1,13 @@
 export function songForm(type) {
-    const update = "Update Song";
-    const create = "Create Song";
-    let title = "";
-    if (type === "update") {
-        title = update;
-    } else if (type === "create") {
-        title = create;
-    }
-    const songForm = /*html*/ `
+  const update = 'Update Song';
+  const create = 'Create Song';
+  let title = '';
+  if (type === 'update') {
+    title = update;
+  } else if (type === 'create') {
+    title = create;
+  }
+  const songForm = /*html*/ `
     <form id="song-form" class="form-song">
         <h2 class="song-form-title">${title}</h2>
         <label for="title">Title:</label>
@@ -73,5 +73,5 @@ export function songForm(type) {
         <button id="cancel-btn" type="button">Cancel</button>
     </form>
     `;
-    return songForm;
+  return songForm;
 }

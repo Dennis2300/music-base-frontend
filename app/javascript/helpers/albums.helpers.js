@@ -1,9 +1,9 @@
 import { albumForm } from '../components/forms/album.form.js';
-import { headerAlbums } from '../components/globals/headers.js';
 import { 
   albumTable, 
   albumTableRow 
 } from '../components/tables/album.tables.js';
+import { albumsHeader } from '../components/tables/headers.tables.js';
 import { getAllAlbums } from '../services/albums.services.js';
 
 export async function albumPage(event) {
@@ -16,7 +16,7 @@ export async function albumPage(event) {
   page.innerHTML = '';
 
   // add header
-  page.insertAdjacentHTML('beforeend', headerAlbums());
+  page.insertAdjacentHTML('beforeend', albumsHeader());
 
   // add event listener to create album button
   document

@@ -1,13 +1,13 @@
 export function albumForm(type) {
-    const update = 'Update Album';
-    const create = 'Create Album';
-    let title = '';
-    if (type === 'update') {
-        title = update;
-    } else if (type === 'create') {
-        title = create;
-    }
-    const albumForm = /*html*/ `
+  const update = 'Update Album';
+  const create = 'Create Album';
+  let title = '';
+  if (type === 'update') {
+    title = update;
+  } else if (type === 'create') {
+    title = create;
+  }
+  const albumForm = /*html*/ `
         <form id="album-form" class="form-album">
         <h2 class="album-form-title">${title}</h2>
             <label for="title">Title:</label>
@@ -64,5 +64,5 @@ export function albumForm(type) {
             <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;
-    return albumForm
+  return albumForm;
 }

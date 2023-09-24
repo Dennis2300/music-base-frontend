@@ -11,14 +11,14 @@ import {
   getAllArtists,
   updateArtist,
 } from '../services/artists.services.js';
-import insertOptions from './insertOptions.helpers.js';
+import insertOptions from '../services/insertOptions.services.js';
 import selectedOption from './selectOption.helpers.js';
 
 // Purpose: Artists page
-export async function artistsPage() {
+export default async function artistsPage() {
   console.log('Artists page');
 
-  let page = document.querySelector('#page');
+  const page = document.querySelector('#page');
 
   // clear page content
   page.innerHTML = '';

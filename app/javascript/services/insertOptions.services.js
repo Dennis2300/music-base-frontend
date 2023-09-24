@@ -1,8 +1,10 @@
+const endpoint = 'https://musicbase-backend-madeinchina.azurewebsites.net';
+
 export default class insertOptions {
   static async insertOptions_Genres(type) {
     let select;
     try {
-      const response = await fetch('http://localhost:3000/genres');
+      const response = await fetch(`${endpoint}/genres`);
       const genres = await response.json();
 
       if (type === 'filter') {
@@ -24,7 +26,7 @@ export default class insertOptions {
   static async insertOptions_Labels(type) {
     let select;
     try {
-      const response = await fetch('http://localhost:3000/labels');
+      const response = await fetch(`${endpoint}/labels`);
       const labels = await response.json();
 
       if (type === 'filter') {
@@ -46,7 +48,7 @@ export default class insertOptions {
   static async insertOptions_Albums(type) {
     let select;
     try {
-      const response = await fetch('http://localhost:3000/albums');
+      const response = await fetch(`${endpoint}/albums`);
       const albums = await response.json();
 
       if (type === 'filter') {
@@ -68,9 +70,8 @@ export default class insertOptions {
   static async insertOptions_Songs(type) {
     let select;
     try {
-      const response = await fetch('http://localhost:3000/songs');
+      const response = await fetch(`${endpoint}/songs`);
       const songs = await response.json();
-      console.log(songs);
 
       if (type === 'filter') {
         select = document.querySelector('#filter-songs');
@@ -91,7 +92,7 @@ export default class insertOptions {
   static async insertOptions_Artists(type) {
     let select;
     try {
-      const response = await fetch('http://localhost:3000/artists');
+      const response = await fetch(`${endpoint}/artists`);
       const artists = await response.json();
 
       if (type === 'filter') {
