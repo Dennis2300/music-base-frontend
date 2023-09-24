@@ -1,7 +1,7 @@
 export function artistForm(type) {
   const update = 'Update Artist';
   const create = 'Create Artist';
-  const titel = '';
+  let titel = '';
   if (type === 'update') {
     titel = update;
   } else if (type === 'create') {

@@ -42,32 +42,83 @@ function showAlbum(album) {
   document
     .querySelector('#albumsTable-container')
     .insertAdjacentHTML('afterbegin', albumTableRow(album));
-    
-  // document
-  // .querySelector(
-  //   `#editAlbum_${album.id}`).addEventListener('click', () => selectAlbum(album)
-  // );
+
+    // document
+    //   .querySelector(
+    //     '#albumsTable-container tbody:first-child .btn-delete-album'
+    //   )
+    //   .addEventListener('click', () => deleteArtist(album.id));   
+
+  document
+  .querySelector(
+    `#editAlbum_${album.id}`).addEventListener('click', () => selectAlbum(album)
+  );
+
+    // document
+    //   .querySelector('#albumsTable-container tbody:first-child .favorite_btn')
+    //   .addEventListener('click', () => favoriteAlbum(album));
+}
+
+// Purpose: Select album to update
+export function selectAlbum(album) {
+  // open dialog form
+  openAlbumForm('update')
+  // set global variable
+  const form = document.querySelector('#album-form');
+  // set form values in form
+  form.id = album.id;
+  form.title.value = album.title;
+  form.releaseDate = album.releaseDate;
+
+  //set selected artists
+  album.artists.forEach(artist => {
+    document
+      .querySelector('#selectedArtists')
+      .insertAdjacentHTML('beforeend', `<p>${artist}</p>`)
+  });
+
+  //set selected labels
+  album.labels.forEach(label => {
+    document
+      .querySelector('#selectedLabels')
+      .insertAdjacentHTML('beforeend',`<p>${label}</p>`)
+  });
+
+  //set selected genres
+  album.genres.forEach(genre => {
+    document
+      .querySelector('#selectedGenres')
+      .insertAdjacentHTML('beforeend',`<p>${genre}</p>`)
+  });
+
+  //set selected songs
+  album.songs.forEach(song => {
+    document
+      .querySelector('#selectedSongs')
+      .insertAdjacentHTML('beforeend',`<p>${song}</p>`)
+  });
 }
 
 export function openAlbumForm(formType) {
-  document.querySelector("#dialog").innerHTML = '';
+  document.querySelector("#dialog-form-container").innerHTML = '';
   // check if form is create or update
-  if (form === 'create') {
-    document.querySelector("#dialog")
+  if (formType === 'create') {
+    document.querySelector("#dialog-form-container")
     .insertAdjacentHTML('beforeend', albumForm('create'));
     document
     .querySelector('#album-form')
     .addEventListener('submit', createAlbum);
-  } else if (formType === 'update') {
-    document.querySelector("#dialog")
+  } else 
+  if (formType === 'update') {
+    document.querySelector("#dialog-form-container")
     .insertAdjacentHTML('beforeend', albumForm('update'));
-    document
-    .querySelector('#album-form')
-    .addEventListener('submit', updateAlbum);
+    // document
+    // .querySelector('#album-form')
+    // .addEventListener('submit', updateAlbum);
   }
   document.querySelector("#cancel-btn").addEventListener('click', () => {
-    document.querySelector("#dialog").close();
+    document.querySelector("#dialog-form-container").close();
   } );
 
-  document.querySelector("#dialog").showModal();
+  document.querySelector("#dialog-form-container").showModal();
 }

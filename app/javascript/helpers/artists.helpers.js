@@ -44,17 +44,19 @@ function showArtist(artist) {
   document
     .querySelector('#artistsTable-container')
     .insertAdjacentHTML('afterbegin', artistTableRow(artist));
-  //   document
-  //     .querySelector(
-  //       '#artistsTable-container tbody:first-child .btn-delete-artist'
-  //     )
-  //     .addEventListener('click', () => deleteArtist(artist.id));
+    // document
+    //   .querySelector(
+    //     '#artistsTable-container tbody:first-child .btn-delete-artist'
+    //   )
+    //   .addEventListener('click', () => deleteArtist(artist.id));
+    
   document
     .querySelector(`#editArtist_${artist.id}`)
     .addEventListener('click', () => selectArtist(artist));
-  //   document
-  //     .querySelector('#artistsTable-container tbody:first-child .favorite_btn')
-  //     .addEventListener('click', () => favoriteArtist(artist));
+
+    // document
+    //   .querySelector('#artistsTable-container tbody:first-child .favorite_btn')
+    //   .addEventListener('click', () => favoriteArtist(artist));
 }
 // Purpose: Select artist to update
 export function selectArtist(artist) {
@@ -98,26 +100,26 @@ export function selectArtist(artist) {
 }
 
 export function openArtistForm(formType) {
-  document.querySelector('#dialog').innerHTML = '';
+  document.querySelector('#dialog-form-container').innerHTML = '';
   // check if form is create or update
   if (formType === 'create') {
     document
-      .querySelector('#dialog')
+      .querySelector('#dialog-form-container')
       .insertAdjacentHTML('beforeend', artistForm('create'));
     document
       .querySelector('#artist-form')
       .addEventListener('submit', createArtist);
   } else if (formType === 'update') {
     document
-      .querySelector('#dialog')
+      .querySelector('#dialog-form-container')
       .insertAdjacentHTML('beforeend', artistForm('update'));
     document
       .querySelector('#artist-form')
       .addEventListener('submit', updateArtist);
   }
   document.querySelector('#cancel-btn').addEventListener('click', () => {
-    document.querySelector('#dialog').close();
+    document.querySelector('#dialog-form-container').close();
   });
 
-  document.querySelector('#dialog').showModal();
+  document.querySelector('#dialog-form-container').showModal();
 }

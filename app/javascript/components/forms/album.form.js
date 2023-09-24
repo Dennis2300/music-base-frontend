@@ -1,7 +1,7 @@
 export function albumForm(type) {
     const update = 'Update Album';
     const create = 'Create Album';
-    const title = '';
+    let title = '';
     if (type === 'update') {
         title = update;
     } else if (type === 'create') {
@@ -21,34 +21,34 @@ export function albumForm(type) {
 
             <br><br>
 
-            <label for="form-genres">Genres:</label>
-            <select id="form-genres" name="form-genres"></select>
+            <label for="genres">Genres:</label>
+            <select id="genres" name="genres"></select>
             
             <br><br>
 
-            <label for="form-labels">Labels:</label>
-            <select id="form-labels" name="form-labels"></select>
+            <label for="labels">Labels:</label>
+            <select id="labels" name="labels"></select>
         
             <br><br>
 
-            <label for="form-songs">Songs:</label>
-            <select id="form-songs" name="form-songs"></select>
+            <label for="songs">Songs:</label>
+            <select id="songs" name="songs"></select>
 
             <br><br>
 
             <div>
-                <p><strong>Selected Genres:</strong></p>
-                <div id="selectedGenres"></div>
+                <p><strong>Selected Artists:</strong></p>
+                <div id="selectedArtists"></div>
             </div>
-
+            
             <div>
                 <p><strong>Selected Labels:</strong></p>
                 <div id="selectedLabels"></div>
             </div>
 
             <div>
-                <p><strong>Selected Albums:</strong></p>
-                <div id="selectedAlbums"></div>
+                <p><strong>Selected Genres:</strong></p>
+                <div id="selectedGenres"></div>
             </div>
 
             <div>
