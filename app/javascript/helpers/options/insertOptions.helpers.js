@@ -1,4 +1,4 @@
-import optionsService from '../../services/options.services';
+import optionsService from '../../services/options.services.js';
 
 export default class insertOptions {
   static async insertOptions_Genres(type) {
@@ -8,13 +8,19 @@ export default class insertOptions {
     } else if (type === 'form') {
       select = document.querySelector('#form-genres');
     }
-    const genres = await optionsService.getGenres();
-    genres.forEach(genre => {
-      select.insertAdjacentHTML(
-        'beforeend',
-        `<option value="${genre.id}">${genre.name}</option>`
-      );
-    });
+
+    try {
+      const genres = await optionsService.getGenres();
+      console.log(genres);
+      genres.forEach(genre => {
+        select.insertAdjacentHTML(
+          'beforeend',
+          `<option value="${genre.name}">${genre.name}</option>`
+        );
+      });
+    } catch (error) {
+      console.log('error getting genres');
+    }
   }
 
   static async insertOptions_Labels(type) {
@@ -24,13 +30,18 @@ export default class insertOptions {
     } else if (type === 'form') {
       select = document.querySelector('#form-labels');
     }
-    const labels = await optionsService.getLabels();
-    labels.forEach(label => {
-      select.insertAdjacentHTML(
-        'beforeend',
-        `<option value="${label.id}">${label.name}</option>`
-      );
-    });
+
+    try {
+      const labels = await optionsService.getLabels();
+      labels.forEach(label => {
+        select.insertAdjacentHTML(
+          'beforeend',
+          `<option value="${label.name}">${label.name}</option>`
+        );
+      });
+    } catch (error) {
+      console.log('error getting labels');
+    }
   }
 
   static async insertOptions_Albums(type) {
@@ -40,13 +51,18 @@ export default class insertOptions {
     } else if (type === 'form') {
       select = document.querySelector('#form-albums');
     }
-    const albums = await optionsService.getAlbums();
-    albums.forEach(album => {
-      select.insertAdjacentHTML(
-        'beforeend',
-        `<option value="${album.id}">${album.name}</option>`
-      );
-    });
+
+    try {
+      const albums = await optionsService.getAlbums();
+      albums.forEach(album => {
+        select.insertAdjacentHTML(
+          'beforeend',
+          `<option value="${album.title}">${album.title}</option>`
+        );
+      });
+    } catch (error) {
+      console.log('error getting albums');
+    }
   }
 
   static async insertOptions_Songs(type) {
@@ -56,13 +72,18 @@ export default class insertOptions {
     } else if (type === 'form') {
       select = document.querySelector('#form-songs');
     }
-    const songs = await optionsService.getSongs();
-    songs.forEach(song => {
-      select.insertAdjacentHTML(
-        'beforeend',
-        `<option value="${song.id}">${song.name}</option>`
-      );
-    });
+
+    try {
+      const songs = await optionsService.getSongs();
+      songs.forEach(song => {
+        select.insertAdjacentHTML(
+          'beforeend',
+          `<option value="${song.title}">${song.title}</option>`
+        );
+      });
+    } catch (error) {
+      console.log('error getting songs');
+    }
   }
 
   static async insertOptions_Artists(type) {
@@ -72,12 +93,17 @@ export default class insertOptions {
     } else if (type === 'form') {
       select = document.querySelector('#form-artists');
     }
-    const artists = await optionsService.getArtists();
-    artists.forEach(artist => {
-      select.insertAdjacentHTML(
-        'beforeend',
-        `<option value="${artist.id}">${artist.name}</option>`
-      );
-    });
+
+    try {
+      const artists = await optionsService.getArtists();
+      artists.forEach(artist => {
+        select.insertAdjacentHTML(
+          'beforeend',
+          `<option value="${artist.name}">${artist.name}</option>`
+        );
+      });
+    } catch (error) {
+      console.log('error getting artists');
+    }
   }
 }

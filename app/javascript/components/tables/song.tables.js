@@ -24,41 +24,32 @@ export function songTableRow(song) {
             <td>${song.releaseDate}</td>
             <td>
                 <ul>
-                    ${song.artists
-                    .map(artist => `<li>${artist}</li>`)
-                    .join('')}
+                    ${song.artists.map(artist => `<li>${artist}</li>`).join('')}
                 </ul>
             </td>
             <td>
                 <ul>
-                    ${song.albums
-                    .map(album => `<li>${album}</li>`)
-                    .join('')}
+                    ${song.albums.map(album => `<li>${album}</li>`).join('')}
                 </ul>
             </td>
             <td>
                 <ul>
-                    ${song.genres
-                    .map(genre => `<li>${genre}</li>`)
-                    .join('')}
+                    ${song.genres.map(genre => `<li>${genre}</li>`).join('')}
                 </ul>
             </td>
             <td>
                 <ul>
-                    ${song.labels
-                    .map(label => `<li>${label}</li>`)
-                    .join('')}
+                    ${song.labels.map(label => `<li>${label}</li>`).join('')}
                 </ul>
             </td>
                 <td>
                 <button class="table_button" id="editSong_${
-                    song.id
+                  song.id
                 }">Edit</button>
                 <button class="table_button" id="deleteSong_${
-                    song.id
+                  song.id
                 }">Delete</button>
                 </tr>
                 `;
-    return tableRow;
+  return tableRow;
 }
-        

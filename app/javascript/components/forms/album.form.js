@@ -60,7 +60,6 @@ export function albumForm(type) {
             <br><br>
 
             <input id="subtmit-btn" type="submit" value="Submit">
-            <input id="reset-btn" type="reset" value="Reset">
             <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;

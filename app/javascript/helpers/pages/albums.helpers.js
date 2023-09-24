@@ -1,10 +1,11 @@
 import { albumForm } from '../../components/forms/album.form.js';
-import { 
-  albumTable, 
-  albumTableRow 
+import {
+  albumTable,
+  albumTableRow,
 } from '../../components/tables/album.tables.js';
-import { albumsHeader } from '../../components/tables/headers.tables.js';
+import { albumsTableHeader } from '../../components/tables/headers.tables.js';
 import { getAllAlbums } from '../../services/albums.services.js';
+import insertOptions from '../options/insertOptions.helpers.js';
 
 export async function albumPage(event) {
   console.log('Album page');
@@ -16,13 +17,16 @@ export async function albumPage(event) {
   page.innerHTML = '';
 
   // add header
-  page.insertAdjacentHTML('beforeend', albumsHeader());
+  page.insertAdjacentHTML('beforeend', albumsTableHeader());
+
+  insertOptions.insertOptions_Genres('filter');
+  insertOptions.insertOptions_Labels('filter');
 
   // add event listener to create album button
   document
     .querySelector('#create-album-header-btn')
     .addEventListener('click', () => openAlbumForm('create'));
-  
+
   // add table
   page.insertAdjacentHTML('beforeend', albumTable());
 
@@ -43,26 +47,25 @@ function showAlbum(album) {
     .querySelector('#albumsTable-container')
     .insertAdjacentHTML('afterbegin', albumTableRow(album));
 
-    // document
-    //   .querySelector(
-    //     '#albumsTable-container tbody:first-child .btn-delete-album'
-    //   )
-    //   .addEventListener('click', () => deleteArtist(album.id));   
+  // document
+  //   .querySelector(
+  //     '#albumsTable-container tbody:first-child .btn-delete-album'
+  //   )
+  //   .addEventListener('click', () => deleteArtist(album.id));
 
   document
-  .querySelector(
-    `#editAlbum_${album.id}`).addEventListener('click', () => selectAlbum(album)
-  );
+    .querySelector(`#editAlbum_${album.id}`)
+    .addEventListener('click', () => selectAlbum(album));
 
-    // document
-    //   .querySelector('#albumsTable-container tbody:first-child .favorite_btn')
-    //   .addEventListener('click', () => favoriteAlbum(album));
+  // document
+  //   .querySelector('#albumsTable-container tbody:first-child .favorite_btn')
+  //   .addEventListener('click', () => favoriteAlbum(album));
 }
 
 // Purpose: Select album to update
 export function selectAlbum(album) {
   // open dialog form
-  openAlbumForm('update')
+  openAlbumForm('update');
   // set global variable
   const form = document.querySelector('#album-form');
   // set form values in form
@@ -74,51 +77,52 @@ export function selectAlbum(album) {
   album.artists.forEach(artist => {
     document
       .querySelector('#selectedArtists')
-      .insertAdjacentHTML('beforeend', `<p>${artist}</p>`)
+      .insertAdjacentHTML('beforeend', `<p>${artist}</p>`);
   });
 
   //set selected labels
   album.labels.forEach(label => {
     document
       .querySelector('#selectedLabels')
-      .insertAdjacentHTML('beforeend',`<p>${label}</p>`)
+      .insertAdjacentHTML('beforeend', `<p>${label}</p>`);
   });
 
   //set selected genres
   album.genres.forEach(genre => {
     document
       .querySelector('#selectedGenres')
-      .insertAdjacentHTML('beforeend',`<p>${genre}</p>`)
+      .insertAdjacentHTML('beforeend', `<p>${genre}</p>`);
   });
 
   //set selected songs
   album.songs.forEach(song => {
     document
       .querySelector('#selectedSongs')
-      .insertAdjacentHTML('beforeend',`<p>${song}</p>`)
+      .insertAdjacentHTML('beforeend', `<p>${song}</p>`);
   });
 }
 
 export function openAlbumForm(formType) {
-  document.querySelector("#dialog-form-container").innerHTML = '';
+  document.querySelector('#dialog-form-container').innerHTML = '';
   // check if form is create or update
   if (formType === 'create') {
-    document.querySelector("#dialog-form-container")
-    .insertAdjacentHTML('beforeend', albumForm('create'));
     document
-    .querySelector('#album-form')
-    .addEventListener('submit', createAlbum);
-  } else 
-  if (formType === 'update') {
-    document.querySelector("#dialog-form-container")
-    .insertAdjacentHTML('beforeend', albumForm('update'));
+      .querySelector('#dialog-form-container')
+      .insertAdjacentHTML('beforeend', albumForm('create'));
+    document
+      .querySelector('#album-form')
+      .addEventListener('submit', createAlbum);
+  } else if (formType === 'update') {
+    document
+      .querySelector('#dialog-form-container')
+      .insertAdjacentHTML('beforeend', albumForm('update'));
     // document
     // .querySelector('#album-form')
     // .addEventListener('submit', updateAlbum);
   }
-  document.querySelector("#cancel-btn").addEventListener('click', () => {
-    document.querySelector("#dialog-form-container").close();
-  } );
+  document.querySelector('#cancel-btn').addEventListener('click', () => {
+    document.querySelector('#dialog-form-container').close();
+  });
 
-  document.querySelector("#dialog-form-container").showModal();
+  document.querySelector('#dialog-form-container').showModal();
 }

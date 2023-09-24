@@ -1,16 +1,11 @@
-import getSelectedOptions from "../helpers/options/getSelectOptions.helpers.js";
-import artistsPage, { showArtist } from "../helpers/pages/artists.helpers.js";
+import getSelectedOptions from '../helpers/options/getSelectOptions.helpers.js';
+import artistsPage, { showArtist } from '../helpers/pages/artists.helpers.js';
 
 const endpoint = 'https://musicbase-backend-madeinchina.azurewebsites.net';
 
 export async function getAllArtists() {
   try {
-    const response = await fetch(`${endpoint}/artists`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(`${endpoint}/artists`);
     const artists = await response.json();
     return artists;
   } catch (error) {
@@ -20,12 +15,7 @@ export async function getAllArtists() {
 
 export async function getArtist(id) {
   try {
-    const response = await fetch(`${endpoint}/artists/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(`${endpoint}/artists/${id}`);
     const artist = await response.json();
     // add artist to DOM
     showArtist(artist);

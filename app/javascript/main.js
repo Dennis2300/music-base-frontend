@@ -1,8 +1,5 @@
-import artistsPage from './helpers/artists.helpers.js';
-import homePage from './helpers/home.helpers.js';
-import insertOptions from './services/insertOptions.services.js';
-import { songPage } from './helpers/songs.helpers.js';
-import { albumPage } from './helpers/albums.helpers.js';
+import artistsPage from "./helpers/pages/artists.helpers.js";
+import homePage from "./helpers/pages/home.helpers.js";
 
 window.addEventListener('load', initApp);
 
@@ -10,10 +7,6 @@ function initApp() {
   console.log('App initialized');
 
   homePage();
-
-  // Add filter options
-  insertOptions.insertOptions_Genres('filter');
-  insertOptions.insertOptions_Labels('filter');
 
   // Add event listeners
   document

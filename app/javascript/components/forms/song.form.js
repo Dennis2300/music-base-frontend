@@ -68,7 +68,6 @@ export function songForm(type) {
 
         <br><br>
 
-        <input id ="reset-btn" type="reset" value="Reset">
         <button type="submit" id="submit-btn">${title}</button>
         <button id="cancel-btn" type="button">Cancel</button>
     </form>

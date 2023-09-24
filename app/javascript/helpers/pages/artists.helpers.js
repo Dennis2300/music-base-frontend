@@ -3,7 +3,7 @@ import {
   artistTable,
   artistTableRow,
 } from '../../components/tables/artist.tables.js';
-import { artistsHeader } from '../../components/tables/headers.tables.js';
+import { artistsTableHeader } from '../../components/tables/headers.tables.js';
 import {
   createArtist,
   deleteArtist,
@@ -24,12 +24,16 @@ export default async function artistsPage() {
   page.innerHTML = '';
 
   // add header
-  page.insertAdjacentHTML('beforeend', artistsHeader());
+  page.insertAdjacentHTML('beforeend', artistsTableHeader());
 
-  // add event listener to create artist button
+  insertOptions.insertOptions_Genres('filter');
+  insertOptions.insertOptions_Labels('filter');
+
+  // add event listener
   document
     .querySelector('#create-artist-header-btn')
     .addEventListener('click', () => openArtistForm('create'));
+
 
   // add table
   page.insertAdjacentHTML('beforeend', artistTable());

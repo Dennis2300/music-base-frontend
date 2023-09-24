@@ -1,5 +1,5 @@
 import { songForm } from '../../components/forms/song.form.js';
-import { songsHeader } from '../../components/tables/headers.tables.js';
+import { songsTableHeader } from '../../components/tables/headers.tables.js';
 import { songTableRow, songsTable } from '../../components/tables/song.tables.js';
 import { getAllSongs } from '../../services/songs.services.js';
 
@@ -13,7 +13,7 @@ export async function songPage(event) {
   page.innerHTML = '';
 
   // add header
-  page.insertAdjacentHTML('beforeend', songsHeader());
+  page.insertAdjacentHTML('beforeend', songsTableHeader());
 
   // add event listener to create song button
   document

@@ -7,7 +7,7 @@ export default class optionsService {
       const genres = await response.json();
       return genres;
     } catch (error) {
-      console.log('error getting genres');
+      console.log('error getting genres from API');
     }
   }
 
@@ -17,7 +17,7 @@ export default class optionsService {
       const labels = await response.json();
       return labels;
     } catch (error) {
-      console.log('error getting labels');
+      console.log('error getting labels from API');
     }
   }
 
@@ -27,7 +27,7 @@ export default class optionsService {
       const albums = await response.json();
       return albums;
     } catch (error) {
-      console.log('error getting albums');
+      console.log('error getting albums from API');
     }
   }
 
@@ -37,7 +37,7 @@ export default class optionsService {
       const songs = await response.json();
       return songs;
     } catch (error) {
-      console.log('error getting songs');
+      console.log('error getting songs  from API');
     }
   }
 
@@ -47,7 +47,7 @@ export default class optionsService {
       const artists = await response.json();
       return artists;
     } catch (error) {
-      console.log('error getting artists');
+      console.log('error getting artists from API');
     }
   }
 }

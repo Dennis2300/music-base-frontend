@@ -59,5 +59,5 @@ export function albumTableRow(album) {
                         }">Delete</button>
                 </tr>
     `;
-    return tableRow;
-};
+  return tableRow;
+}
