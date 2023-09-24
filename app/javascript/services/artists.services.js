@@ -1,5 +1,5 @@
-import artistsPage, { showArtist } from '../helpers/artists.helpers.js';
-import getSelectedOptions from '../helpers/getSelectOptions.js';
+import getSelectedOptions from "../helpers/options/getSelectOptions.helpers.js";
+import artistsPage, { showArtist } from "../helpers/pages/artists.helpers.js";
 
 const endpoint = 'https://musicbase-backend-madeinchina.azurewebsites.net';
 

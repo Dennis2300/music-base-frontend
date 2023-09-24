@@ -1,10 +1,10 @@
-import { albumForm } from '../components/forms/album.form.js';
+import { albumForm } from '../../components/forms/album.form.js';
 import { 
   albumTable, 
   albumTableRow 
-} from '../components/tables/album.tables.js';
-import { albumsHeader } from '../components/tables/headers.tables.js';
-import { getAllAlbums } from '../services/albums.services.js';
+} from '../../components/tables/album.tables.js';
+import { albumsHeader } from '../../components/tables/headers.tables.js';
+import { getAllAlbums } from '../../services/albums.services.js';
 
 export async function albumPage(event) {
   console.log('Album page');

@@ -1,7 +1,7 @@
-import { songForm } from '../components/forms/song.form.js';
-import { songsHeader } from '../components/tables/headers.tables.js';
-import { songTableRow, songsTable } from '../components/tables/song.tables.js';
-import { getAllSongs } from '../services/songs.services.js';
+import { songForm } from '../../components/forms/song.form.js';
+import { songsHeader } from '../../components/tables/headers.tables.js';
+import { songTableRow, songsTable } from '../../components/tables/song.tables.js';
+import { getAllSongs } from '../../services/songs.services.js';
 
 export async function songPage(event) {
   console.log('Song page');
