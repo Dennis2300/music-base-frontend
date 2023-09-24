@@ -37,7 +37,7 @@ export function songForm(type) {
         <br><br>
 
         <label for="bonus_track">Bonus Track:</label>
-        <select id="bonus_track" name="bonus_track">
+        <select id="bonus_track" name="bonus_track"></select>
 
         <br><br>
 
@@ -68,9 +68,9 @@ export function songForm(type) {
 
         <br><br>
 
-        <input id="submit-btn" type="submit" value="Submit">
         <input id ="reset-btn" type="reset" value="Reset">
         <button type="submit" id="submit-btn">${title}</button>
+        <button id="cancel-btn" type="button">Cancel</button>
     </form>
     `;
     return songForm;
