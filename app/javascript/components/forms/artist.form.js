@@ -20,7 +20,7 @@ export function artistForm(type) {
             <input type="number" id="activeSince" name="activeSince" required><br><br>
 
             <label for="image">Image:</label>
-            <input type="file" id="image" name="image" accept="image/*" required><br><br>
+            <input type="url" id="image" name="image" accept="image/*" ><br><br>
 
             <label for="website">Website:</label>
             <input type="url" id="website" name="website" required><br><br>
@@ -28,51 +28,50 @@ export function artistForm(type) {
             <label for="shortDescription">Short Description:</label>
             <textarea id="shortDescription" name="shortDescription"></textarea><br><br>
 
-            <label for="genres">Genres:</label>
-            <select id="genres" name="genres"></select>
+            <label for="form-genres">Genres:</label>
+            <select id="form-genres" name="form-genres"></select>
             
             <br><br>
 
-            <label for="labels">Labels:</label>
-            <select id="labels" name="labels"></select>
+            <label for="form-labels">Labels:</label>
+            <select id="form-labels" name="form-labels"></select>
             
             <br><br>
 
-            <label for="albums">Albums:</label>
-            <select id="albums" name="albums"></select>
+            <label for="form-albums">Albums:</label>
+            <select id="form-albums" name="form-albums"></select>
 
             <br><br>
 
-            <label for="songs">Songs:</label>
-            <select id="songs" name="songs"></select>
+            <label for="form-songs">Songs:</label>
+            <select id="form-songs" name="form-songs"></select>
 
             <br><br>
 
             <div>
                 <p><strong>Selected Genres:</strong></p>
-                <div id="selectedGenres"></div>
+                <div id="selected-genres"></div>
             </div>
 
             <div>
                 <p><strong>Selected Labels:</strong></p>
-                <div id="selectedLabels"></div>
+                <div id="selected-labels"></div>
             </div>
 
             <div>
                 <p><strong>Selected Albums:</strong></p>
-                <div id="selectedAlbums"></div>
+                <div id="selected-albums"></div>
             </div>
 
             <div>
                 <p><strong>Selected Songs:</strong></p>
-                <div id="selectedSongs"></div>
+                <div id="selected-songs"></div>
 
             </div>
 
             <br><br>
             
             <input id="submit-btn" type="submit" value="Submit">
-            <input id="reset-btn" type="reset" value="Reset">
             <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;

@@ -1,3 +1,5 @@
+import favoriteStar from '../globals/favoriteStar.js';
+
 export function artistTable() {
   const artistTable = /*html*/ `
   <table>
@@ -14,7 +16,7 @@ export function artistTable() {
         <th>Songs</th>
         </tr>
     </thead>
-    <tbody id="artistsTable-container"></tbody>
+    <tbody id="artistsTable"></tbody>
     </table>
     `;
   return artistTable;
@@ -23,7 +25,9 @@ export function artistTable() {
 export function artistTableRow(artist) {
   const tableRow = /*html*/ `
             <tr id="artist_${artist.id}">
-                <td>${artist.name}</td>
+                <td>${artist.name}
+                <h4>${artist.favorite ? favoriteStar() : ''}</h4>
+                </td>
                 <td>${artist.birthdate}</td>
                 <td>${artist.activeSince}</td>
                 <td>${artist.website}</td>
