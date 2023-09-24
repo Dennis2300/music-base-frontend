@@ -11,7 +11,6 @@ export default class insertOptions {
 
     try {
       const genres = await optionsService.getGenres();
-      console.log(genres);
       genres.forEach(genre => {
         select.insertAdjacentHTML(
           'beforeend',
@@ -93,7 +92,6 @@ export default class insertOptions {
     } else if (type === 'form') {
       select = document.querySelector('#form-artists');
     }
-
     try {
       const artists = await optionsService.getArtists();
       artists.forEach(artist => {

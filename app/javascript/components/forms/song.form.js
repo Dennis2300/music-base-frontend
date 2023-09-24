@@ -16,6 +16,9 @@ export function songForm(type) {
         <label for="releaseDate">Release Date:</label>
         <input type="date" id="releaseDate" name="releaseDate" required><br><br>
 
+        <label for="bonus_track">Bonus Track:</label>
+        <select type="checkbox" id="bonus_track" name="bonus_track" required>
+
         <label for="form-artists">Artists:</label>
         <select id="form-artists" name="form-artists"></select>
 
@@ -43,27 +46,27 @@ export function songForm(type) {
 
         <div>
             <p><strong>Selected Artists:</strong></p>
-            <div id="selectedArtists"></div>
+            <div id="selected-artists"></div>
         </div>
 
         <div>
             <p><strong>Selected Albums:</strong></p>
-            <div id="selectedAlbums"></div>
+            <div id="selected-albums"></div>
         </div>
 
         <div>
             <p><strong>Selected Genres:</strong></p>
-            <div id="selectedGenres"></div>
+            <div id="selected-genres"></div>
         </div>
 
         <div>
             <p><strong>Selected Labels:</strong></p>
-            <div id="selectedLabels"></div>
+            <div id="selected-labels"></div>
         </div>
 
         <div>
             <p><strong>Selected Bonus Tracks:</strong></p>
-            <div id="selectedBonusTracks"></div>
+            <div id="selected-bonust-tracks"></div>
         </div>
 
         <br><br>

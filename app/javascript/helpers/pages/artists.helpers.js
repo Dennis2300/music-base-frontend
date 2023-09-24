@@ -16,8 +16,6 @@ import selectedOption from '../options/selectOption.helpers.js';
 
 // Purpose: Artists page
 export default async function artistsPage() {
-  console.log('Artists page');
-
   const page = document.querySelector('#page');
 
   // clear page content
@@ -33,7 +31,6 @@ export default async function artistsPage() {
   document
     .querySelector('#create-artist-header-btn')
     .addEventListener('click', () => openArtistForm('create'));
-
 
   // add table
   page.insertAdjacentHTML('beforeend', artistTable());
@@ -53,7 +50,7 @@ export default async function artistsPage() {
 
 export function showArtist(artist) {
   document
-    .querySelector('#artistsTable')
+    .querySelector('#artistsTableBody')
     .insertAdjacentHTML('afterbegin', artistTableRow(artist));
   document
     .querySelector(`#deleteArtist_${artist.id}`)

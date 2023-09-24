@@ -1,12 +1,19 @@
 import { songForm } from '../../components/forms/song.form.js';
 import { songsTableHeader } from '../../components/tables/headers.tables.js';
-import { songTableRow, songsTable } from '../../components/tables/song.tables.js';
-import { getAllSongs } from '../../services/songs.services.js';
+import {
+  songTableRow,
+  songsTable,
+} from '../../components/tables/song.tables.js';
+import {
+  createSong,
+  deleteSong,
+  getAllSongs,
+  updateSong,
+} from '../../services/songs.services.js';
+import insertOptions from '../options/insertOptions.helpers.js';
+import selectedOption from '../options/selectOption.helpers.js';
 
-export async function songPage(event) {
-  console.log('Song page');
-  event.preventDefault();
-
+export default async function songPage() {
   const page = document.querySelector('#page');
 
   // clear page content
@@ -20,6 +27,10 @@ export async function songPage(event) {
     .querySelector('#create-song-header-btn')
     .addEventListener('click', () => openSongForm('create'));
 
+  // add filter options
+  insertOptions.insertOptions_Genres('filter');
+  insertOptions.insertOptions_Labels('filter');
+
   // add table
   page.insertAdjacentHTML('beforeend', songsTable());
 
@@ -30,15 +41,17 @@ export async function songPage(event) {
   } catch (error) {
     console.log(error);
   }
-
   // add footer
   // page.insertAdjacentHTML('beforeend', footer());
 }
 
-function showSong(song) {
+export function showSong(song) {
   document
-    .querySelector('#songsTable-container')
+    .querySelector('#songsTableBody')
     .insertAdjacentHTML('afterbegin', songTableRow(song));
+  document
+    .querySelector(`#deleteSong_${song.id}`)
+    .addEventListener('click', () => deleteSong(song.id));
 
   document
     .querySelector(`#editSong_${song.id}`)
@@ -54,8 +67,7 @@ export function selectSong(song) {
   // set song values in form
   form.id = song.id;
   form.title.value = song.title;
-  form.releaseDate.value = song.releaseDate;
-  // form.bonus_track.value = song.bonus_track;
+  form.bonus_track.value = song.bonus_track;
 
   // set selected artists
   song.artists.forEach(artist => {
@@ -98,13 +110,31 @@ export function openSongForm(formType) {
     document
       .querySelector('#dialog-form-container')
       .insertAdjacentHTML('beforeend', songForm('update'));
-    // document
-    //     .querySelector('#song-form')
-    //     .addEventListener('submit', updateSong);
+    document.querySelector('#song-form').addEventListener('submit', updateSong);
   }
   document.querySelector('#cancel-btn').addEventListener('click', () => {
     document.querySelector('#dialog-form-container').close();
   });
+
+  // set genres, labels, albums, and songs options
+  insertOptions.insertOptions_Genres('form');
+  insertOptions.insertOptions_Labels('form');
+  insertOptions.insertOptions_Albums('form');
+  insertOptions.insertOptions_Artists('form');
+
+  // set event listeners for genres, labels, albums, and songs
+  document
+    .querySelector('#form-albums')
+    .addEventListener('change', selectedOption.selectedAlbum);
+  document
+    .querySelector('#form-artists')
+    .addEventListener('change', selectedOption.selectedArtist);
+  document
+    .querySelector('#form-genres')
+    .addEventListener('change', selectedOption.selectedGenre);
+  document
+    .querySelector('#form-labels')
+    .addEventListener('change', selectedOption.selectedLabel);
 
   document.querySelector('#dialog-form-container').showModal();
 }
