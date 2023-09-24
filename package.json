@@ -5,7 +5,6 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "start": "npx live-server",
     "dev": "npx live-server"
   },
   "author": "",
