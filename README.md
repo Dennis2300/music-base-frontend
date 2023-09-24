@@ -6,6 +6,13 @@
 ## Project website 
 https://dennis2300.github.io/music-base-frontend/app/ - (hosted on Github Pages)
 
+## Link to backend repository
+
+https://github.com/abedassoum/music-base-backend
+
+## Link to backend deployed on Azure
+https://musicbase-backend-madeinchina.azurewebsites.net/
+
 
 ## Technologies Used
 
