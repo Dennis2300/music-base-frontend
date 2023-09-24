@@ -49,7 +49,7 @@ export async function artistsPage() {
 
 export function showArtist(artist) {
   document
-    .querySelector('#artistsTable-container')
+    .querySelector('#artistsTable')
     .insertAdjacentHTML('afterbegin', artistTableRow(artist));
   document
     .querySelector(`#deleteArtist_${artist.id}`)

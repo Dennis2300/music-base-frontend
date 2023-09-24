@@ -16,7 +16,7 @@ export function artistTable() {
         <th>Songs</th>
         </tr>
     </thead>
-    <tbody id="artistsTable-container"></tbody>
+    <tbody id="artistsTable"></tbody>
     </table>
     `;
   return artistTable;

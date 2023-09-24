@@ -1,4 +1,3 @@
-
 export async function albumPage() {
   console.log('Album page');
 }

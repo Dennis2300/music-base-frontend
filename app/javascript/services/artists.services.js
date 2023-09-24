@@ -102,6 +102,7 @@ export async function updateArtist(event) {
     // update artist in DOM
     document.querySelector(`#artist_${artist.id}`).remove();
     showArtist(artist);
+    scrollToTop();
   } catch (error) {
     console.log(error);
   }
@@ -135,18 +136,33 @@ export async function favoriteArtist(artist) {
   } else {
     artist.favorite = true;
   }
+  const wrongBirthdate = artist.birthdate;
 
-  const response = await fetch(`${endpoint}/artists/${artist.id}`, {
-    method: 'PUT',
-    body: JSON.stringify(artist),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  if (response.ok) {
-    console.log('Favorite updated');
+  console.log(wrongBirthdate);
+
+  const correctBirthdate = wrongBirthdate.split('').splice(0, 10).join('');
+  console.log(correctBirthdate);
+
+  artist.birthdate = correctBirthdate;
+
+  try {
+    const response = await fetch(`${endpoint}/artists/${artist.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(artist),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const updatedArtist = await response.json();
+    // update artist in DOM
+    document.querySelector(`#artist_${artist.id}`).remove();
     showArtist(artist);
-  } else {
-    console.log('Error updating favorite');
+    scrollToTop();
+  } catch (error) {
+    console.log(error);
   }
+}
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
