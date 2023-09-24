@@ -1,7 +1,7 @@
 import { artistsPage, showArtist } from '../helpers/artists.helpers.js';
 import getSelectedOptions from '../helpers/getSelectOptions.js';
 
-const endpoint = 'http://localhost:3000';
+const endpoint = 'https://musicbase-backend-madeinchina.azurewebsites.net'
 
 export async function getAllArtists() {
   try {

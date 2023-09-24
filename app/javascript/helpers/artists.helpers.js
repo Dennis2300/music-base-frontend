@@ -1,9 +1,9 @@
 import { artistForm } from '../components/forms/artist.form.js';
-import { artistsHeader } from '../components/globals/headers.js';
 import {
   artistTable,
   artistTableRow,
 } from '../components/tables/artist.tables.js';
+import { artistsHeader } from '../components/tables/headers.tables.js';
 import {
   createArtist,
   deleteArtist,

@@ -5,7 +5,7 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "dev": "npx live-server"
+    "dev": "npx live-server ./app"
   },
   "author": "",
   "license": "ISC",
