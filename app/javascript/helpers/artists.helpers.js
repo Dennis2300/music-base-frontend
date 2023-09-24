@@ -1,15 +1,22 @@
 import { artistForm } from '../components/forms/artist.form.js';
-import { headerArtists } from '../components/globals/headers.js';
+import { artistsHeader } from '../components/globals/headers.js';
 import {
   artistTable,
   artistTableRow,
 } from '../components/tables/artist.tables.js';
-import { getAllArtists } from '../services/artists.services.js';
+import {
+  createArtist,
+  deleteArtist,
+  favoriteArtist,
+  getAllArtists,
+  updateArtist,
+} from '../services/artists.services.js';
+import insertOptions from './insertOptions.helpers.js';
+import selectedOption from './selectOption.helpers.js';
 
 // Purpose: Artists page
-export async function artistsPage(event) {
+export async function artistsPage() {
   console.log('Artists page');
-  event.preventDefault();
 
   let page = document.querySelector('#page');
 
@@ -17,7 +24,7 @@ export async function artistsPage(event) {
   page.innerHTML = '';
 
   // add header
-  page.insertAdjacentHTML('beforeend', headerArtists());
+  page.insertAdjacentHTML('beforeend', artistsHeader());
 
   // add event listener to create artist button
   document
@@ -40,27 +47,25 @@ export async function artistsPage(event) {
   // page.insertAdjacentHTML('beforeend', footer());
 }
 
-function showArtist(artist) {
+export function showArtist(artist) {
   document
     .querySelector('#artistsTable-container')
     .insertAdjacentHTML('afterbegin', artistTableRow(artist));
-  //   document
-  //     .querySelector(
-  //       '#artistsTable-container tbody:first-child .btn-delete-artist'
-  //     )
-  //     .addEventListener('click', () => deleteArtist(artist.id));
+  document
+    .querySelector(`#deleteArtist_${artist.id}`)
+    .addEventListener('click', () => deleteArtist(artist.id));
   document
     .querySelector(`#editArtist_${artist.id}`)
     .addEventListener('click', () => selectArtist(artist));
-  //   document
-  //     .querySelector('#artistsTable-container tbody:first-child .favorite_btn')
-  //     .addEventListener('click', () => favoriteArtist(artist));
+  document
+    .querySelector(`#favoriteArtist_${artist.id}`)
+    .addEventListener('click', () => favoriteArtist(artist));
 }
 // Purpose: Select artist to update
 export function selectArtist(artist) {
   // open dialog form
   openArtistForm('update');
-  // Set global variable
+
   const form = document.querySelector('#artist-form');
   // set artist values in form
   form.id = artist.id;
@@ -74,50 +79,71 @@ export function selectArtist(artist) {
   // set selected genres
   artist.genres.forEach(genre => {
     document
-      .querySelector('#selectedGenres')
-      .insertAdjacentHTML('beforeend', `<p>${genre.name}</p>`);
+      .querySelector('#selected-genres')
+      .insertAdjacentHTML('beforeend', `<p>${genre}</p>`);
   });
   // set selected labels
   artist.labels.forEach(label => {
     document
-      .querySelector('#selectedLabels')
-      .insertAdjacentHTML('beforeend', `<p>${label.name}</p>`);
+      .querySelector('#selected-labels')
+      .insertAdjacentHTML('beforeend', `<p>${label}</p>`);
   });
   // set selected albums
   artist.albums.forEach(album => {
     document
-      .querySelector('#selectedAlbums')
-      .insertAdjacentHTML('beforeend', `<p>${album.name}</p>`);
+      .querySelector('#selected-albums')
+      .insertAdjacentHTML('beforeend', `<p>${album}</p>`);
   });
   // set selected songs
   artist.songs.forEach(song => {
     document
-      .querySelector('#selectedSongs')
-      .insertAdjacentHTML('beforeend', `<p>${song.name}</p>`);
+      .querySelector('#selected-songs')
+      .insertAdjacentHTML('beforeend', `<p>${song}</p>`);
   });
 }
 
 export function openArtistForm(formType) {
-  document.querySelector('#dialog').innerHTML = '';
+  document.querySelector('#dialog-form-container').innerHTML = '';
   // check if form is create or update
   if (formType === 'create') {
     document
-      .querySelector('#dialog')
+      .querySelector('#dialog-form-container')
       .insertAdjacentHTML('beforeend', artistForm('create'));
     document
       .querySelector('#artist-form')
       .addEventListener('submit', createArtist);
   } else if (formType === 'update') {
     document
-      .querySelector('#dialog')
+      .querySelector('#dialog-form-container')
       .insertAdjacentHTML('beforeend', artistForm('update'));
     document
       .querySelector('#artist-form')
       .addEventListener('submit', updateArtist);
   }
+
   document.querySelector('#cancel-btn').addEventListener('click', () => {
-    document.querySelector('#dialog').close();
+    document.querySelector('#dialog-form-container').close();
   });
 
-  document.querySelector('#dialog').showModal();
+  // set genres, labels, albums, and songs options
+  insertOptions.insertOptions_Genres('form');
+  insertOptions.insertOptions_Labels('form');
+  insertOptions.insertOptions_Albums('form');
+  insertOptions.insertOptions_Songs('form');
+
+  // set event listeners for genres, labels, albums, and songs
+  document
+    .querySelector('#form-genres')
+    .addEventListener('change', selectedOption.selectedGenre);
+  document
+    .querySelector('#form-labels')
+    .addEventListener('change', selectedOption.selectedLabel);
+  document
+    .querySelector('#form-albums')
+    .addEventListener('change', selectedOption.selectedAlbum);
+  document
+    .querySelector('#form-songs')
+    .addEventListener('change', selectedOption.selectedSong);
+
+  document.querySelector('#dialog-form-container').showModal();
 }

@@ -1,4 +1,4 @@
-export function headerArtists() {
+export function artistsHeader() {
   const headerArtists = /*html*/ `
         <div class="header">
             <h1>Artists</h1>
@@ -10,7 +10,7 @@ export function headerArtists() {
   return headerArtists;
 }
 
-export function headerAlbums() {
+export function albumsHeader() {
   const headerAlbums = /*html*/ `
         <div class="header">
             <h1>Albums</h1>
@@ -22,7 +22,7 @@ export function headerAlbums() {
   return headerAlbums;
 }
 
-export function headerSongs() {
+export function songsHeader() {
   const headerSongs = /*html*/ `
         <div class="header">
             <h1>Songs</h1>
