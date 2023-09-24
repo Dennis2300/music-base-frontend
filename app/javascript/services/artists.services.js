@@ -136,13 +136,9 @@ export async function favoriteArtist(artist) {
   } else {
     artist.favorite = true;
   }
+  // stupid sql dates
   const wrongBirthdate = artist.birthdate;
-
-  console.log(wrongBirthdate);
-
   const correctBirthdate = wrongBirthdate.split('').splice(0, 10).join('');
-  console.log(correctBirthdate);
-
   artist.birthdate = correctBirthdate;
 
   try {
