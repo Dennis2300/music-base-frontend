@@ -50,14 +50,15 @@ export function songTableRow(song) {
                     ${song.labels.map(label => `<li>${label}</li>`).join('')}
                 </ul>
             </td>
-                <td>
-              <button class="table_button" id="editSong_${
-                song.id
-              }">Edit</button>
-              <button class="table_button" id="deleteSong_${
-                song.id
-              }">Delete</button>
-              </tr>
+            <td>
+                <button class="table_button" id="editSong_${
+                  song.id
+                }">Edit</button>
+                <button class="table_button" id="deleteSong_${
+                  song.id
+                }">Delete</button>
+            </td> 
+          </tr>
               `;
   return tableRow;
 }

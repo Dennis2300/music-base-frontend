@@ -59,7 +59,7 @@ export function albumForm(type) {
 
             <br><br>
 
-            <input id="subtmit-btn" type="submit" value="Submit">
+            <input id="submit-btn" type="submit" value="${title}">
             <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;

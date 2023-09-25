@@ -17,7 +17,8 @@ export function songForm(type) {
         <input type="date" id="releaseDate" name="releaseDate" required><br><br>
 
         <label for="bonus_track">Bonus Track:</label>
-        <select type="checkbox" id="bonus_track" name="bonus_track" required>
+        <input type="checkbox" name="bonus_track" id="bonus_track" >
+        <label for="bonus_track">Bonus track</label>
 
         <br><br>
 
@@ -31,14 +32,14 @@ export function songForm(type) {
 
         <br><br>
 
-        <label for="form-genres">Genres:</label>
-        <select id="form-genres" name="form-genres"></select>
-
-        <br><br>
-
         <label for="form-labels">Labels:</label>
         <select id="form-labels" name="form-labels"></select>
 
+        <br><br>
+
+        <label for="form-genres">Genres:</label>
+        <select id="form-genres" name="form-genres"></select>
+        
         <br><br>
 
         <div>
@@ -63,7 +64,7 @@ export function songForm(type) {
 
         <br><br>
 
-        <button type="submit" id="submit-btn">${title}</button>
+        <input id="submit-btn" type="submit" value="${title}">
         <button id="cancel-btn" type="button">Cancel</button>
     </form>
     `;

@@ -72,33 +72,34 @@ export function selectSong(song) {
   // set selected artists
   song.artists.forEach(artist => {
     document
-      .querySelector('#selectedArtists')
+      .querySelector('#selected-artists')
       .insertAdjacentHTML('beforeend', `<p>${artist}</p>`);
   });
 
   // set selected albums
   song.albums.forEach(album => {
     document
-      .querySelector('#selectedAlbums')
+      .querySelector('#selected-albums')
       .insertAdjacentHTML('beforeend', `<p>${album}</p>`);
   });
 
   // set selected genres
   song.genres.forEach(genre => {
     document
-      .querySelector('#selectedGenres')
+      .querySelector('#selected-genres')
       .insertAdjacentHTML('beforeend', `<p>${genre}</p>`);
   });
 
   // set selected labels
   song.labels.forEach(label => {
     document
-      .querySelector('#selectedLabels')
+      .querySelector('#selected-labels')
       .insertAdjacentHTML('beforeend', `<p>${label}</p>`);
   });
 }
 
 export function openSongForm(formType) {
+  console.log(formType);
   document.querySelector('#dialog-form-container').innerHTML = '';
   // check if form is create or update
   if (formType === 'create') {

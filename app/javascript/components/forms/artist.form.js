@@ -1,15 +1,15 @@
 export function artistForm(type) {
   const update = 'Update Artist';
   const create = 'Create Artist';
-  let titel = '';
+  let title = '';
   if (type === 'update') {
-    titel = update;
+    title = update;
   } else if (type === 'create') {
-    titel = create;
+    title = create;
   }
   const artistForm = /*html*/ `
         <form id="artist-form" class="form-artist">
-        <h2 class="artist-form-title">${titel}</h2>
+        <h2 class="artist-form-title">${title}</h2>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -71,7 +71,7 @@ export function artistForm(type) {
 
             <br><br>
             
-            <input id="submit-btn" type="submit" value="Submit">
+            <input id="submit-btn" type="submit" value="${title}">
             <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;
