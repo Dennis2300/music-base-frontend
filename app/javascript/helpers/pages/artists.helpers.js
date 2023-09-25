@@ -63,7 +63,7 @@ export function showArtist(artist) {
     .addEventListener('click', () => favoriteArtist(artist));
 }
 // Purpose: Select artist to update
-export function selectArtist(artist) {
+function selectArtist(artist) {
   // open dialog form
   openArtistForm('update');
 

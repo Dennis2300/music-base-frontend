@@ -24,22 +24,22 @@ export async function getAlbum(id) {
   }
 }
 
-export async function createAlbum(album) {
+export async function createAlbum(event) {
   event.preventDefault();
 
-  // document.querySelector('#dialog-form-container').close();
+  document.querySelector('#dialog-form-container').close();
 
-  // const album = {
-  //   name: event.target.name.value,
-  //   releaseDate: event.target.releaseDate.value,
-  //   image: event.target.image.value,
-  //   shortDescription: event.target.shortDescription.value,
-  // };
+  const album = {
+    name: event.target.name.value,
+    releaseDate: event.target.releaseDate.value,
+    image: event.target.image.value,
+    shortDescription: event.target.shortDescription.value,
+  };
 
-  // album.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
-  // album.genres = getSelectedOptions.getSelectedGenres();
-  // album.artists = getSelectedOptions.getSelectedArtists();
-  // album.songs = getSelectedOptions.getSelectedSongs();
+  album.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
+  album.genres = getSelectedOptions.getSelectedGenres();
+  album.artists = getSelectedOptions.getSelectedArtists();
+  album.songs = getSelectedOptions.getSelectedSongs();
 
   try {
     const response = await fetch(`${endpoint}/albums`, {

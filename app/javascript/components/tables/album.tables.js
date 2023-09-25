@@ -11,7 +11,7 @@ export function albumTable() {
           <th>Songs</th>
           </tr>
       </thead>
-      <tbody id="albumsTableBody"></tbody>
+      <tbody id="albumsTable"></tbody>
     </table>
     `;
   return albumTable;

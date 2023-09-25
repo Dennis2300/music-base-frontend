@@ -47,7 +47,7 @@ export default async function albumPage() {
 
 export function showAlbum(album) {
   document
-    .querySelector('#albumsTableBody')
+    .querySelector(`#albumsTableBody`)
     .insertAdjacentHTML('afterbegin', albumTableRow(album));
   document
     .querySelector(`#deleteAlbum_${album.id}`)
@@ -58,7 +58,7 @@ export function showAlbum(album) {
 }
 
 // Purpose: Select album to update
-export function selectAlbum(album) {
+function selectAlbum(album) {
   // open dialog form
   openAlbumForm('update');
   // set global variable

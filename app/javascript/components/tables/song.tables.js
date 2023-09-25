@@ -26,6 +26,7 @@ export function songTableRow(song) {
     .reverse()
     .join('-');
   const releaseDate = formattedReleaseDate;
+
   const tableRow = /*html*/ `
         <tr id="song_${song.id}">
             <td>${song.title}</td>
@@ -35,7 +36,6 @@ export function songTableRow(song) {
                 </ul>
             </td>
             <td>${releaseDate}</td>
-          
             <td>
                 <ul>
                     ${song.albums.map(album => `<li>${album}</li>`).join('')}
@@ -52,13 +52,13 @@ export function songTableRow(song) {
                 </ul>
             </td>
                 <td>
-                <button class="table_button" id="editSong_${
-                  song.id
-                }">Edit</button>
-                <button class="table_button" id="deleteSong_${
-                  song.id
-                }">Delete</button>
-                </tr>
-                `;
+              <button class="table_button" id="editSong_${
+                song.id
+              }">Edit</button>
+              <button class="table_button" id="deleteSong_${
+                song.id
+              }">Delete</button>
+              </tr>
+              `;
   return tableRow;
 }
