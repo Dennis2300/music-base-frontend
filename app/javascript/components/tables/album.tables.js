@@ -1,6 +1,6 @@
 export function albumTable() {
   const albumTable = /*html*/ `
-    <table">
+    <table id="albumsTable">
       <thead>
           <tr>
           <th>Album Title</th>
@@ -11,7 +11,7 @@ export function albumTable() {
           <th>Songs</th>
           </tr>
       </thead>
-      <tbody id="albumsTable"></tbody>
+      <tbody id="albumsTableBody"></tbody>
     </table>
     `;
   return albumTable;

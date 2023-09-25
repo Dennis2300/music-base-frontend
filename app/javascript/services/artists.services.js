@@ -78,8 +78,6 @@ export async function updateArtist(event) {
   artist.albums = getSelectedOptions.getSelectedAlbums();
   artist.songs = getSelectedOptions.getSelectedSongs();
 
-  console.log(artist);
-
   try {
     const response = await fetch(`${endpoint}/artists/${artist.id}`, {
       method: 'PUT',
