@@ -74,7 +74,10 @@ export async function updateSong(event) {
         'Content-Type': 'application/json',
       },
     });
-    songsPage();
+    // update song in DOM
+    document.querySelector(`#song_${song.id}`).remove();
+    showSong(song);
+    scrollToTop();
   } catch (error) {
     console.log(error);
   }
@@ -85,8 +88,13 @@ export async function deleteSong(id) {
     const response = await fetch(`${endpoint}/songs/${id}`, {
       method: 'DELETE',
     });
-    songsPage();
+    // remove song from DOM
+    document.querySelector(`#song_${id}`).remove();
   } catch (error) {
     console.log(error);
   }
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }

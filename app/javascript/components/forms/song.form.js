@@ -19,6 +19,8 @@ export function songForm(type) {
         <label for="bonus_track">Bonus Track:</label>
         <select type="checkbox" id="bonus_track" name="bonus_track" required>
 
+        <br><br>
+
         <label for="form-artists">Artists:</label>
         <select id="form-artists" name="form-artists"></select>
 
@@ -36,11 +38,6 @@ export function songForm(type) {
 
         <label for="form-labels">Labels:</label>
         <select id="form-labels" name="form-labels"></select>
-
-        <br><br>
-
-        <label for="bonus_track">Bonus Track:</label>
-        <select id="bonus_track" name="bonus_track"></select>
 
         <br><br>
 
@@ -62,11 +59,6 @@ export function songForm(type) {
         <div>
             <p><strong>Selected Labels:</strong></p>
             <div id="selected-labels"></div>
-        </div>
-
-        <div>
-            <p><strong>Selected Bonus Tracks:</strong></p>
-            <div id="selected-bonust-tracks"></div>
         </div>
 
         <br><br>

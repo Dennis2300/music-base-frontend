@@ -37,7 +37,6 @@ export default async function songPage() {
   // add table data
   try {
     const songs = await getAllSongs();
-    console.log(songs);
     songs.forEach(song => showSong(song));
   } catch (error) {
     console.log(error);
@@ -128,14 +127,14 @@ export function openSongForm(formType) {
     .querySelector('#form-albums')
     .addEventListener('change', selectedOption.selectedAlbum);
   document
-    .querySelector('#form-artists')
-    .addEventListener('change', selectedOption.selectedArtist);
-  document
     .querySelector('#form-genres')
     .addEventListener('change', selectedOption.selectedGenre);
   document
     .querySelector('#form-labels')
     .addEventListener('change', selectedOption.selectedLabel);
+  document
+    .querySelector('#form-artists')
+    .addEventListener('change', selectedOption.selectedArtist);
 
   document.querySelector('#dialog-form-container').showModal();
 }

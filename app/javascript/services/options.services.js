@@ -37,7 +37,7 @@ export default class optionsService {
       const songs = await response.json();
       return songs;
     } catch (error) {
-      console.log('error getting songs  from API');
+      console.log('error getting songs from API');
     }
   }
 
