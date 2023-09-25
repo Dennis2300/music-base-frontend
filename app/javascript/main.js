@@ -19,9 +19,5 @@ function initApp() {
   document
     .querySelector('#show-albums-btn')
     .addEventListener('click', albumPage);
-  // document.querySelector('#show-songs-btn').addEventListener('click', songPage);
-
-  document.querySelector('#show-songs-btn').addEventListener('click', () => {
-    alert('Den her koster penge hvis du vil se den');
-  });
+  document.querySelector('#show-songs-btn').addEventListener('click', songPage);
 }
