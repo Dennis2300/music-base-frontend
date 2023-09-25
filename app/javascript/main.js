@@ -16,14 +16,11 @@ function initApp() {
     .addEventListener('click', artistsPage);
 
   document.querySelector('#home-btn').addEventListener('click', homePage);
-  // document
-  //   .querySelector('#show-albums-btn')
-  //   .addEventListener('click', albumPage);
+  document
+    .querySelector('#show-albums-btn')
+    .addEventListener('click', albumPage);
   // document.querySelector('#show-songs-btn').addEventListener('click', songPage);
 
-  document.querySelector('#show-albums-btn').addEventListener('click', () => {
-    alert('Tålmodighed RACE');
-  });
   document.querySelector('#show-songs-btn').addEventListener('click', () => {
     alert('Den her koster penge hvis du vil se den');
   });
