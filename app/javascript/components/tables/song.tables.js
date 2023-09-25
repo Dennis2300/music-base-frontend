@@ -19,14 +19,13 @@ export function songsTable() {
 
 export function songTableRow(song) {
   // stupid sql dates
-  const wrongReleaseDate = album.releaseDate;
+  const wrongReleaseDate = song.releaseDate;
   const correctReleaseDate = wrongReleaseDate.split('').splice(0, 10).join('');
   const formattedReleaseDate = correctReleaseDate
     .split('-')
     .reverse()
     .join('-');
   const releaseDate = formattedReleaseDate;
-
   const tableRow = /*html*/ `
         <tr id="song_${song.id}">
             <td>${song.title}</td>
