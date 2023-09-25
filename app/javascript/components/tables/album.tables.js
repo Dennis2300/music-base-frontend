@@ -1,27 +1,36 @@
 export function albumTable() {
   const albumTable = /*html*/ `
-    <table id="albumsTable">
-    <thead>
-        <tr>
-        <th>Album Title</th>
-        <th>Release Date</th>
-        <th>Artists</th>
-        <th>Genres</th>
-        <th>Labels</th>
-        <th>Songs</th>
-        </tr>
-    </thead>
-    <tbody id="albumsTable-container"></tbody>
+    <table">
+      <thead>
+          <tr>
+          <th>Album Title</th>
+          <th>Release Date</th>
+          <th>Artists</th>
+          <th>Genres</th>
+          <th>Labels</th>
+          <th>Songs</th>
+          </tr>
+      </thead>
+      <tbody id="albumsTableBody"></tbody>
     </table>
     `;
   return albumTable;
 }
 
 export function albumTableRow(album) {
+  // stupid sql dates
+  const wrongReleaseDate = album.releaseDate;
+  const correctReleaseDate = wrongReleaseDate.split('').splice(0, 10).join('');
+  const formattedReleaseDate = correctReleaseDate
+    .split('-')
+    .reverse()
+    .join('-');
+  const releaseDate = formattedReleaseDate;
+
   const tableRow = /*html*/ `
                 <tr id="album_${album.id}">
                     <td>${album.title}</td>
-                    <td>${album.releaseDate}</td>
+                    <td>${releaseDate}</td>
                     <td>
                         <ul>
                             ${album.artists
@@ -59,5 +68,5 @@ export function albumTableRow(album) {
                         }">Delete</button>
                 </tr>
     `;
-    return tableRow;
-};
+  return tableRow;
+}

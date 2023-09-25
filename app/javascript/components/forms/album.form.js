@@ -21,46 +21,45 @@ export function albumForm(type) {
 
             <br><br>
 
-            <label for="genres">Genres:</label>
-            <select id="genres" name="genres"></select>
+            <label for="form-songs">Songs:</label>
+            <select id="form-songs" name="form-songs"></select>
             
             <br><br>
 
-            <label for="labels">Labels:</label>
-            <select id="labels" name="labels"></select>
+            <label for="form-labels">Labels:</label>
+            <select id="form-labels" name="form-labels"></select>
         
             <br><br>
 
-            <label for="songs">Songs:</label>
-            <select id="songs" name="songs"></select>
+            <label for="form-genres">Genres:</label>
+            <select id="form-genres" name="form-genres"></select>
 
             <br><br>
 
             <div>
                 <p><strong>Selected Artists:</strong></p>
-                <div id="selectedArtists"></div>
+                <div id="selected-artists"></div>
             </div>
             
             <div>
                 <p><strong>Selected Labels:</strong></p>
-                <div id="selectedLabels"></div>
+                <div id="selected-labels"></div>
             </div>
 
             <div>
                 <p><strong>Selected Genres:</strong></p>
-                <div id="selectedGenres"></div>
+                <div id="selected-genres"></div>
             </div>
 
             <div>
                 <p><strong>Selected Songs:</strong></p>
-                <div id="selectedSongs"></div>
+                <div id="selected-songs"></div>
 
             </div>
 
             <br><br>
 
             <input id="subtmit-btn" type="submit" value="Submit">
-            <input id="reset-btn" type="reset" value="Reset">
             <button id="cancel-btn" type="button">Cancel</button>
         </form>
     `;

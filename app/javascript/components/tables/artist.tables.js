@@ -7,8 +7,8 @@ export function artistTable() {
         <tr>
         <th>Artist</th>
         <th>Birthday</th>
-        <th>Active Since</th>
         <th>Website</th>
+        <th>Active Since</th>
         <th>Favorite</th>
         <th>Labels</th>
         <th>Genres</th>
@@ -16,21 +16,27 @@ export function artistTable() {
         <th>Songs</th>
         </tr>
     </thead>
-    <tbody id="artistsTable"></tbody>
+    <tbody id="artistsTableBody"></tbody>
     </table>
     `;
   return artistTable;
 }
 
 export function artistTableRow(artist) {
+  // stupid sql dates
+  const wrongBirthdate = artist.birthdate;
+  const correctBirthdate = wrongBirthdate.split('').splice(0, 10).join('');
+  const formattedBirthdate = correctBirthdate.split('-').reverse().join('-');
+  artist.birthdate = formattedBirthdate;
+
   const tableRow = /*html*/ `
             <tr id="artist_${artist.id}">
                 <td>${artist.name}
                 <h4>${artist.favorite ? favoriteStar() : ''}</h4>
                 </td>
                 <td>${artist.birthdate}</td>
-                <td>${artist.activeSince}</td>
                 <td>${artist.website}</td>
+                <td>${artist.activeSince}</td>
                 <td>${artist.favorite}</td>
                 <td>
                     <ul>

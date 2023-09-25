@@ -1,9 +1,9 @@
-export function artistsHeader() {
+export function artistsTableHeader() {
   const headerArtists = /*html*/ `
           <div class="header">
               <h1>Artists</h1>
               <div class="header_buttons">
-                ${filterHeader()}
+                ${filterTableHeader()}
                 <button class="header_button" id="create-artist-header-btn">Create Artist</button>
               </div>
           </div>
@@ -11,11 +11,11 @@ export function artistsHeader() {
   return headerArtists;
 }
 
-export function albumsHeader() {
+export function albumsTableHeader() {
   const headerAlbums = /*html*/ `
           <div class="header">
               <h1>Albums</h1>
-              ${filterHeader()}
+              ${filterTableHeader()}
               <div class="header_buttons">
                   <button class="header_button" id="create-album-header-btn">Create Album</button>
               </div>
@@ -24,11 +24,11 @@ export function albumsHeader() {
   return headerAlbums;
 }
 
-export function songsHeader() {
+export function songsTableHeader() {
   const headerSongs = /*html*/ `
           <div class="header">
               <h1>Songs</h1>
-              ${filterHeader()}
+              ${filterTableHeader()}
               <div class="header_buttons">
                   <button class="header_button" id="create-song-header-btn">Create Song</button>
               </div>
@@ -37,7 +37,7 @@ export function songsHeader() {
   return headerSongs;
 }
 
-function filterHeader() {
+function filterTableHeader() {
   const headerFilter = /*html*/ `
     <!------------Filter Artists by Labels------------>
       <label for="filter-labels">Filter labels</label>
