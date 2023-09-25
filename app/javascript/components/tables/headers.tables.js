@@ -15,8 +15,8 @@ export function albumsTableHeader() {
   const headerAlbums = /*html*/ `
           <div class="header">
               <h1>Albums</h1>
-              ${filterTableHeader()}
               <div class="header_buttons">
+              ${filterTableHeader()}
                   <button class="header_button" id="create-album-header-btn">Create Album</button>
               </div>
           </div>
@@ -28,8 +28,8 @@ export function songsTableHeader() {
   const headerSongs = /*html*/ `
           <div class="header">
               <h1>Songs</h1>
-              ${filterTableHeader()}
               <div class="header_buttons">
+              ${filterTableHeader()}
                   <button class="header_button" id="create-song-header-btn">Create Song</button>
               </div>
           </div>

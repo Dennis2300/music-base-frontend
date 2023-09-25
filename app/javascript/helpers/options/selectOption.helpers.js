@@ -89,8 +89,6 @@ export default class selectedOption {
 
     let optionAlreadySelected = false;
 
-    console.log(selectedOptions);
-
     selectedOptions.forEach(option => {
       if (option.innerText === artist) {
         console.log('Artist already selected');

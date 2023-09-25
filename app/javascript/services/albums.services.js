@@ -79,7 +79,10 @@ export async function updateAlbum(event) {
         'Content-Type': 'application/json',
       },
     });
-    albumsPage();
+    // update DOM with updated album
+    document.querySelector(`#album_${album.id}`).remove();
+    showAlbum(album);
+    scrollToTop();
   } catch (error) {
     console.log(error);
   }
@@ -90,8 +93,13 @@ export async function deleteAlbum(id) {
     const response = await fetch(`${endpoint}/albums/${id}`, {
       method: 'DELETE',
     });
-    albumsPage();
+    // remove album from DOM
+    document.querySelector(`#album_${id}`).remove();
   } catch (error) {
     console.log(error);
   }
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }

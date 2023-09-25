@@ -1,14 +1,18 @@
 import optionsService from '../../services/options.services.js';
 
+function getDOMSelect(type, select) {
+  let selectElement;
+  if (type === 'filter') {
+    selectElement = document.querySelector(`#filter-${select}`);
+  } else if (type === 'form') {
+    selectElement = document.querySelector(`#form-${select}`);
+  }
+  return selectElement;
+}
+
 export default class insertOptions {
   static async insertOptions_Genres(type) {
-    let select;
-    if (type === 'filter') {
-      select = document.querySelector('#filter-genres');
-    } else if (type === 'form') {
-      select = document.querySelector('#form-genres');
-    }
-
+    const select = getDOMSelect(type, 'genres');
     try {
       const genres = await optionsService.getGenres();
       genres.forEach(genre => {
@@ -23,13 +27,7 @@ export default class insertOptions {
   }
 
   static async insertOptions_Labels(type) {
-    let select;
-    if (type === 'filter') {
-      select = document.querySelector('#filter-labels');
-    } else if (type === 'form') {
-      select = document.querySelector('#form-labels');
-    }
-
+    const select = getDOMSelect(type, 'labels');
     try {
       const labels = await optionsService.getLabels();
       labels.forEach(label => {
@@ -44,13 +42,7 @@ export default class insertOptions {
   }
 
   static async insertOptions_Albums(type) {
-    let select;
-    if (type === 'filter') {
-      select = document.querySelector('#filter-albums');
-    } else if (type === 'form') {
-      select = document.querySelector('#form-albums');
-    }
-
+    const select = getDOMSelect(type, 'albums');
     try {
       const albums = await optionsService.getAlbums();
       albums.forEach(album => {
@@ -65,13 +57,7 @@ export default class insertOptions {
   }
 
   static async insertOptions_Songs(type) {
-    let select;
-    if (type === 'filter') {
-      select = document.querySelector('#filter-songs');
-    } else if (type === 'form') {
-      select = document.querySelector('#form-songs');
-    }
-
+    const select = getDOMSelect(type, 'songs');
     try {
       const songs = await optionsService.getSongs();
       songs.forEach(song => {
@@ -86,12 +72,7 @@ export default class insertOptions {
   }
 
   static async insertOptions_Artists(type) {
-    let select;
-    if (type === 'filter') {
-      select = document.querySelector('#filter-artists');
-    } else if (type === 'form') {
-      select = document.querySelector('#form-artists');
-    }
+    const select = getDOMSelect(type, 'artists');
     try {
       const artists = await optionsService.getArtists();
       artists.forEach(artist => {
