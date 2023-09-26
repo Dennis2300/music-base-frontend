@@ -1,5 +1,5 @@
 export default class getSelectedOptions {
-  static getSelectedGenres() {
+  static genres() {
     const selectedGenres = document.querySelectorAll('#selected-genres p');
     const genres = [];
     selectedGenres.forEach(genre => {
@@ -8,7 +8,7 @@ export default class getSelectedOptions {
     return genres;
   }
 
-  static getSelectedLabels() {
+  static labels() {
     const selectedLabels = document.querySelectorAll('#selected-labels p');
     const labels = [];
     selectedLabels.forEach(label => {
@@ -17,7 +17,7 @@ export default class getSelectedOptions {
     return labels;
   }
 
-  static getSelectedAlbums() {
+  static albums() {
     const selectedAlbums = document.querySelectorAll('#selected-albums p');
     const albums = [];
     selectedAlbums.forEach(album => {
@@ -26,7 +26,7 @@ export default class getSelectedOptions {
     return albums;
   }
 
-  static getSelectedSongs() {
+  static songs() {
     const selectedSongs = document.querySelectorAll('#selected-songs p');
     const songs = [];
     selectedSongs.forEach(song => {
@@ -35,7 +35,7 @@ export default class getSelectedOptions {
     return songs;
   }
 
-  static getSelectedArtists() {
+  static artist() {
     const selectedArtists = document.querySelectorAll('#selected-artists p');
     const artists = [];
     selectedArtists.forEach(artist => {

@@ -38,10 +38,10 @@ export async function createArtist(event) {
     shortDescription: event.target.shortDescription.value,
   };
 
-  artist.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
-  artist.genres = getSelectedOptions.getSelectedGenres();
-  artist.albums = getSelectedOptions.getSelectedAlbums();
-  artist.songs = getSelectedOptions.getSelectedSongs();
+  artist.labels = getSelectedOptions.labels(); // array of selected labels
+  artist.genres = getSelectedOptions.genres();
+  artist.albums = getSelectedOptions.albums();
+  artist.songs = getSelectedOptions.songs();
 
   try {
     const response = await fetch(`${endpoint}/artists`, {
@@ -73,10 +73,10 @@ export async function updateArtist(event) {
     shortDescription: event.target.shortDescription.value,
   };
 
-  artist.labels = getSelectedOptions.getSelectedLabels();
-  artist.genres = getSelectedOptions.getSelectedGenres();
-  artist.albums = getSelectedOptions.getSelectedAlbums();
-  artist.songs = getSelectedOptions.getSelectedSongs();
+  artist.labels = getSelectedOptions.labels(); // array of selected labels
+  artist.genres = getSelectedOptions.genres();
+  artist.albums = getSelectedOptions.albums();
+  artist.songs = getSelectedOptions.songs();
 
   try {
     const response = await fetch(`${endpoint}/artists/${artist.id}`, {

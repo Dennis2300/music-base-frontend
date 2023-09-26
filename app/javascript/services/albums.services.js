@@ -36,10 +36,10 @@ export async function createAlbum(event) {
     shortDescription: event.target.shortDescription.value,
   };
 
-  album.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
-  album.genres = getSelectedOptions.getSelectedGenres();
-  album.artists = getSelectedOptions.getSelectedArtists();
-  album.songs = getSelectedOptions.getSelectedSongs();
+  album.labels = getSelectedOptions.genres(); // array of selected labels
+  album.genres = getSelectedOptions.labels();
+  album.artists = getSelectedOptions.artist();
+  album.songs = getSelectedOptions.songs();
 
   try {
     const response = await fetch(`${endpoint}/albums`, {
@@ -66,10 +66,10 @@ export async function updateAlbum(event) {
     shortDescription: event.target.shortDescription.value,
   };
 
-  album.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
-  album.genres = getSelectedOptions.getSelectedGenres();
-  album.artists = getSelectedOptions.getSelectedArtists();
-  album.songs = getSelectedOptions.getSelectedSongs();
+  album.labels = getSelectedOptions.genres(); // array of selected labels
+  album.genres = getSelectedOptions.labels();
+  album.artists = getSelectedOptions.artist();
+  album.songs = getSelectedOptions.songs();
 
   try {
     const response = await fetch(`${endpoint}/albums/${album.id}`, {
