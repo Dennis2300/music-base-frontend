@@ -23,8 +23,8 @@ export default async function albumPage() {
   page.insertAdjacentHTML('beforeend', albumsTableHeader());
 
   // add filter options
-  insertOptions.insertOptions_Genres('filter');
-  insertOptions.insertOptions_Labels('filter');
+  insertOptions.genres('filter');
+  insertOptions.labels('filter');
 
   // add event listener to create album button
   document
@@ -119,24 +119,24 @@ export function openAlbumForm(formType) {
   });
 
   // set genres, labels, albums, and songs options
-  insertOptions.insertOptions_Genres('form');
-  insertOptions.insertOptions_Labels('form');
-  insertOptions.insertOptions_Songs('form');
-  insertOptions.insertOptions_Artists('form');
+  insertOptions.genres('form');
+  insertOptions.labels('form');
+  insertOptions.songs('form');
+  insertOptions.artists('form');
 
   // set event listeners for genres, labels, albums, and songs
   document
     .querySelector('#form-genres')
-    .addEventListener('change', selectedOption.selectedGenre);
+    .addEventListener('change', selectedOption.genre);
   document
     .querySelector('#form-labels')
-    .addEventListener('change', selectedOption.selectedLabel);
+    .addEventListener('change', selectedOption.label);
   document
     .querySelector('#form-songs')
-    .addEventListener('change', selectedOption.selectedSong);
+    .addEventListener('change', selectedOption.song);
   document
     .querySelector('#form-artists')
-    .addEventListener('change', selectedOption.selectedArtist);
+    .addEventListener('change', selectedOption.artist);
 
   document.querySelector('#dialog-form-container').showModal();
 }

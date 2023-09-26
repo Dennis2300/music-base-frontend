@@ -18,7 +18,6 @@ export function songForm(type) {
 
         <label for="bonus_track">Bonus Track:</label>
         <input type="checkbox" name="bonus_track" id="bonus_track" >
-        <label for="bonus_track">Bonus track</label>
 
         <br><br>
 
