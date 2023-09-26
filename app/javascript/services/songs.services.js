@@ -32,10 +32,10 @@ export async function createSong(event) {
     bonus_track: document.querySelector('#bonus_track').checked,
   };
 
-  song.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
-  song.genres = getSelectedOptions.getSelectedGenres();
-  song.artists = getSelectedOptions.getSelectedArtists();
-  song.albums = getSelectedOptions.getSelectedAlbums();
+  song.labels = getSelectedOptions.labels(); // array of selected labels
+  song.genres = getSelectedOptions.genres();
+  song.artists = getSelectedOptions.artist();
+  song.albums = getSelectedOptions.albums();
 
   try {
     const response = await fetch(`${endpoint}/songs`, {
@@ -61,10 +61,10 @@ export async function updateSong(event) {
     bonus_track: document.querySelector('#bonus_track').checked,
   };
 
-  song.labels = getSelectedOptions.getSelectedLabels(); // array of selected labels
-  song.genres = getSelectedOptions.getSelectedGenres();
-  song.artists = getSelectedOptions.getSelectedArtists();
-  song.albums = getSelectedOptions.getSelectedAlbums();
+  song.labels = getSelectedOptions.labels(); // array of selected labels
+  song.genres = getSelectedOptions.genres();
+  song.artists = getSelectedOptions.artist();
+  song.albums = getSelectedOptions.albums();
 
   try {
     const response = await fetch(`${endpoint}/songs/${song.id}`, {
