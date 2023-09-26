@@ -1,5 +1,5 @@
 export default class selectedOption {
-  static selectedGenre() {
+  static genre() {
     const genre = document.querySelector('#form-genres').value;
     const selectedOptions = document.querySelectorAll('#selected-genres p');
 
@@ -20,7 +20,7 @@ export default class selectedOption {
     }
   }
 
-  static selectedLabel() {
+  static label() {
     const label = document.querySelector('#form-labels').value;
     const selectedOptions = document.querySelectorAll('#selected-labels p');
 
@@ -41,7 +41,7 @@ export default class selectedOption {
     }
   }
 
-  static selectedAlbum() {
+  static album() {
     const album = document.querySelector('#form-albums').value;
     const selectedOptions = document.querySelectorAll('#selected-albums p');
 
@@ -62,7 +62,7 @@ export default class selectedOption {
     }
   }
 
-  static selectedSong() {
+  static song() {
     const song = document.querySelector('#form-songs').value;
     const selectedOptions = document.querySelectorAll('#selected-songs p');
 
@@ -83,7 +83,7 @@ export default class selectedOption {
     }
   }
 
-  static selectedArtist() {
+  static artist() {
     const artist = document.querySelector('#form-artists').value;
     const selectedOptions = document.querySelectorAll('#selected-artists p');
 

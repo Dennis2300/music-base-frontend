@@ -28,8 +28,8 @@ export default async function songPage() {
     .addEventListener('click', () => openSongForm('create'));
 
   // add filter options
-  insertOptions.insertOptions_Genres('filter');
-  insertOptions.insertOptions_Labels('filter');
+  insertOptions.genres('filter');
+  insertOptions.labels('filter');
 
   // add table
   page.insertAdjacentHTML('beforeend', songsTable());
@@ -118,24 +118,24 @@ export function openSongForm(formType) {
   });
 
   // set genres, labels, albums, and songs options
-  insertOptions.insertOptions_Genres('form');
-  insertOptions.insertOptions_Labels('form');
-  insertOptions.insertOptions_Albums('form');
-  insertOptions.insertOptions_Artists('form');
+  insertOptions.genres('form');
+  insertOptions.labels('form');
+  insertOptions.albums('form');
+  insertOptions.artists('form');
 
   // set event listeners for genres, labels, albums, and songs
   document
     .querySelector('#form-albums')
-    .addEventListener('change', selectedOption.selectedAlbum);
+    .addEventListener('change', selectedOption.album);
   document
     .querySelector('#form-genres')
-    .addEventListener('change', selectedOption.selectedGenre);
+    .addEventListener('change', selectedOption.genre);
   document
     .querySelector('#form-labels')
-    .addEventListener('change', selectedOption.selectedLabel);
+    .addEventListener('change', selectedOption.label);
   document
     .querySelector('#form-artists')
-    .addEventListener('change', selectedOption.selectedArtist);
+    .addEventListener('change', selectedOption.artist);
 
   document.querySelector('#dialog-form-container').showModal();
 }

@@ -11,7 +11,7 @@ function getDOMSelect(type, select) {
 }
 
 export default class insertOptions {
-  static async insertOptions_Genres(type) {
+  static async genres(type) {
     const select = getDOMSelect(type, 'genres');
     try {
       const genres = await optionsService.getGenres();
@@ -26,7 +26,7 @@ export default class insertOptions {
     }
   }
 
-  static async insertOptions_Labels(type) {
+  static async labels(type) {
     const select = getDOMSelect(type, 'labels');
     try {
       const labels = await optionsService.getLabels();
@@ -41,7 +41,7 @@ export default class insertOptions {
     }
   }
 
-  static async insertOptions_Albums(type) {
+  static async albums(type) {
     const select = getDOMSelect(type, 'albums');
     try {
       const albums = await optionsService.getAlbums();
@@ -56,7 +56,7 @@ export default class insertOptions {
     }
   }
 
-  static async insertOptions_Songs(type) {
+  static async songs(type) {
     const select = getDOMSelect(type, 'songs');
     try {
       const songs = await optionsService.getSongs();
@@ -71,7 +71,7 @@ export default class insertOptions {
     }
   }
 
-  static async insertOptions_Artists(type) {
+  static async artists(type) {
     const select = getDOMSelect(type, 'artists');
     try {
       const artists = await optionsService.getArtists();
