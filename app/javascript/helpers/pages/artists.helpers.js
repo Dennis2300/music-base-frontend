@@ -1,7 +1,7 @@
 import { artistForm } from '../../components/forms/artist.form.js';
 import {
-  artistTable,
-  artistTableRow,
+  ArtistTable,
+  ArtistRow,
 } from '../../components/tables/artist.tables.js';
 import { artistsTableHeader } from '../../components/tables/headers.tables.js';
 import {
@@ -39,7 +39,7 @@ export default async function artistsPage() {
     .addEventListener('click', () => openArtistForm('create'));
 
   // add table
-  page.insertAdjacentHTML('beforeend', artistTable());
+  page.insertAdjacentHTML('beforeend', new ArtistTable().getHTML());
 
   // add table data
 
@@ -57,7 +57,7 @@ export default async function artistsPage() {
 export function showArtist(artist) {
   document
     .querySelector('#artistsTableBody')
-    .insertAdjacentHTML('afterbegin', artistTableRow(artist));
+    .insertAdjacentHTML('afterbegin', new ArtistRow(artist).createRowHTML());
   document
     .querySelector(`#deleteArtist_${artist.id}`)
     .addEventListener('click', () => deleteArtist(artist.id));

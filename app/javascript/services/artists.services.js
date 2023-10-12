@@ -118,7 +118,6 @@ export async function deleteArtist(id) {
 
 // set favorite artists
 export async function favoriteArtist(artist) {
-  console.log(artist);
   // if artist is favorite, set favorite to false
   if (artist.favorite !== null) {
     if (artist.favorite === true) {
