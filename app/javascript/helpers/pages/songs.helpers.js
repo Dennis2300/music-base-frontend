@@ -11,13 +11,13 @@ import {
   updateSong,
 } from '../../services/songs.services.js';
 import insertOptions from '../options/insertOptions.helpers.js';
-import selectedOption from '../options/selectedOptions.helpers.js';
+import selectedOptions from '../options/selectedOptions.helpers.js';
 
 // objects to store and export selected options
-export const selectedGenres = new selectedOption('selected-genres');
-export const selectedLabels = new selectedOption('selected-labels');
-export const selectedAlbums = new selectedOption('selected-albums');
-export const selectedArtists = new selectedOption('selected-artists');
+export const selectedGenres = new selectedOptions('selected-genres');
+export const selectedLabels = new selectedOptions('selected-labels');
+export const selectedAlbums = new selectedOptions('selected-albums');
+export const selectedArtists = new selectedOptions('selected-artists');
 
 export default async function songPage() {
   const page = document.querySelector('#page');
