@@ -18,15 +18,12 @@ export default class selectedOptions {
     this.array.push(value);
 
     // insert option in DOM
-    this.container = document.getElementById(this.containerId);
-    if (!this.container) {
-      throw console.error(`Element with id ${this.containerId} does not exist`);
-    }
-
-    this.container.insertAdjacentHTML(
-      'afterbegin',
-      `<p id="options${value}"> ${value} </p>`
-    );
+    document
+      .getElementById(this.containerId)
+      .insertAdjacentHTML(
+        'afterbegin',
+        `<p id="options${value}"> ${value} </p>`
+      );
   }
 
   get options() {
