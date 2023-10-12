@@ -1,5 +1,10 @@
-import getSelectedOptions from '../helpers/options/getSelectOptions.helpers.js';
-import songsPage, { showSong } from '../helpers/pages/songs.helpers.js';
+import songsPage, {
+  showSong,
+  selectedAlbums,
+  selectedArtists,
+  selectedGenres,
+  selectedLabels,
+} from '../helpers/pages/songs.helpers.js';
 const endpoint = 'https://musicbase-backend-madeinchina.azurewebsites.net';
 
 export async function getAllSongs() {
@@ -32,10 +37,10 @@ export async function createSong(event) {
     bonus_track: document.querySelector('#bonus_track').checked,
   };
 
-  song.labels = getSelectedOptions.labels(); // array of selected labels
-  song.genres = getSelectedOptions.genres();
-  song.artists = getSelectedOptions.artist();
-  song.albums = getSelectedOptions.albums();
+  song.labels = selectedLabels.options; // array of selected labels
+  song.genres = selectedGenres.options;
+  song.artists = selectedArtists.options;
+  song.albums = selectedAlbums.options;
 
   try {
     const response = await fetch(`${endpoint}/songs`, {
@@ -61,10 +66,10 @@ export async function updateSong(event) {
     bonus_track: document.querySelector('#bonus_track').checked,
   };
 
-  song.labels = getSelectedOptions.labels(); // array of selected labels
-  song.genres = getSelectedOptions.genres();
-  song.artists = getSelectedOptions.artist();
-  song.albums = getSelectedOptions.albums();
+  song.labels = selectedLabels.options; // array of selected labels
+  song.genres = selectedGenres.options;
+  song.artists = selectedArtists.options;
+  song.albums = selectedAlbums.options;
 
   try {
     const response = await fetch(`${endpoint}/songs/${song.id}`, {

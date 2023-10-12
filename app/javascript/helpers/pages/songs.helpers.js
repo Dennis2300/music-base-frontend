@@ -11,7 +11,13 @@ import {
   updateSong,
 } from '../../services/songs.services.js';
 import insertOptions from '../options/insertOptions.helpers.js';
-import selectedOption from '../options/selectOption.helpers.js';
+import selectedOption from '../options/selectedOptions.helpers.js';
+
+// objects to store and export selected options
+export const selectedGenres = new selectedOption('selected-genres');
+export const selectedLabels = new selectedOption('selected-labels');
+export const selectedAlbums = new selectedOption('selected-albums');
+export const selectedArtists = new selectedOption('selected-artists');
 
 export default async function songPage() {
   const page = document.querySelector('#page');
@@ -71,30 +77,22 @@ export function selectSong(song) {
 
   // set selected artists
   song.artists.forEach(artist => {
-    document
-      .querySelector('#selected-artists')
-      .insertAdjacentHTML('beforeend', `<p>${artist}</p>`);
+    selectedArtists.option = artist;
   });
 
   // set selected albums
   song.albums.forEach(album => {
-    document
-      .querySelector('#selected-albums')
-      .insertAdjacentHTML('beforeend', `<p>${album}</p>`);
+    selectedAlbums.option = album;
   });
 
   // set selected genres
   song.genres.forEach(genre => {
-    document
-      .querySelector('#selected-genres')
-      .insertAdjacentHTML('beforeend', `<p>${genre}</p>`);
+    selectedGenres.option = genre;
   });
 
   // set selected labels
   song.labels.forEach(label => {
-    document
-      .querySelector('#selected-labels')
-      .insertAdjacentHTML('beforeend', `<p>${label}</p>`);
+    selectedLabels.option = label;
   });
 }
 
@@ -126,16 +124,32 @@ export function openSongForm(formType) {
   // set event listeners for genres, labels, albums, and songs
   document
     .querySelector('#form-albums')
-    .addEventListener('change', selectedOption.album);
+    .addEventListener(
+      'change',
+      () =>
+        (selectedAlbums.option = document.getElementById('form-albums').value)
+    );
   document
     .querySelector('#form-genres')
-    .addEventListener('change', selectedOption.genre);
+    .addEventListener(
+      'change',
+      () =>
+        (selectedGenres.option = document.getElementById('form-genres').value)
+    );
   document
     .querySelector('#form-labels')
-    .addEventListener('change', selectedOption.label);
+    .addEventListener(
+      'change',
+      () =>
+        (selectedLabels.option = document.getElementById('form-labels').value)
+    );
   document
     .querySelector('#form-artists')
-    .addEventListener('change', selectedOption.artist);
+    .addEventListener(
+      'change',
+      () =>
+        (selectedArtists.option = document.getElementById('form-artists').value)
+    );
 
   document.querySelector('#dialog-form-container').showModal();
 }
